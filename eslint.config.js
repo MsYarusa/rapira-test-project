@@ -5,12 +5,11 @@ import skipFormatting from '@vue/eslint-config-prettier/skip-formatting'
 import { defineConfigWithVueTs, vueTsConfigs } from '@vue/eslint-config-typescript'
 import { globalIgnores } from 'eslint/config'
 import eslintPluginImport from 'eslint-plugin-import'
-// ИСПРАВЛЕНИЕ: Импортируем ParseForESLintResult из @typescript-eslint/types
 import eslintPluginVue from 'eslint-plugin-vue'
 import * as espree from 'espree'
 import vueParser from 'vue-eslint-parser'
 
-// --- Определение кастомного парсера для TypeScript ---
+// Определение кастомного парсера для TypeScript
 const eslintParser = {
   parse: (code, options) => {
     return parser.parse(code, {
@@ -26,7 +25,7 @@ const eslintParser = {
   },
 }
 
-// --- Экспорт основной конфигурации ESLint ---
+// Экспорт основной конфигурации ESLint
 export default defineConfigWithVueTs(
   globalIgnores(['**/dist/**', '**/dist-ssr/**', '**/coverage/**']),
 
@@ -103,6 +102,8 @@ export default defineConfigWithVueTs(
           ignorepackages: true,
           vue: 'always',
           svg: 'always',
+          scss: 'always',
+          css: 'always',
         },
       ],
 
