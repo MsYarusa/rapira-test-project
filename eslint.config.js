@@ -82,13 +82,6 @@ export default defineConfigWithVueTs(
           multiline: { max: 1 },
         },
       ],
-      'vue/first-attribute-linebreak': [
-        'error',
-        {
-          singleline: 'beside',
-          multiline: 'below',
-        },
-      ],
 
       'vue/html-self-closing': [
         'error',

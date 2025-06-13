@@ -2,8 +2,8 @@
   <li>
     <RouterLink
       :to="headerLinkConfig.to"
-      class="rounded-md px-[14px] py-[8px] leading-none font-semibold text-gray-100"
-      active-class="bg-white/10 text-primary!"
+      class="px-[14px] py-[8px] leading-none font-normal"
+      active-class="text-primary-active!"
     >
       <span>{{ capitalizeString(headerLinkConfig.label) }}</span>
     </RouterLink>
@@ -15,9 +15,9 @@ import { capitalizeString } from '@/shared/lib/string'
 
 import type { HeaderLinkConfig } from '../../model/types'
 
-interface HeaderLinkProps {
+interface SidebarLinkProps {
   headerLinkConfig: HeaderLinkConfig
 }
 
-defineProps<HeaderLinkProps>()
+defineProps<SidebarLinkProps>()
 </script>

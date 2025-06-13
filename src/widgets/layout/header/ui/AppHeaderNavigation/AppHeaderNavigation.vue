@@ -1,11 +1,11 @@
 <template>
-  <div class="flex gap-5">
+  <ul>
     <AppHeaderLink
       v-for="linkConfig of headerNavigationConfig"
       :key="linkConfig.label"
       :header-link-config="linkConfig"
     />
-  </div>
+  </ul>
 </template>
 
 <script setup lang="ts">
