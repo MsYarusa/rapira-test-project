@@ -2,7 +2,10 @@ import stylisticTs from '@stylistic/eslint-plugin-ts'
 import typescript_plugin from '@typescript-eslint/eslint-plugin'
 import parser from '@typescript-eslint/parser'
 import skipFormatting from '@vue/eslint-config-prettier/skip-formatting'
-import { defineConfigWithVueTs, vueTsConfigs } from '@vue/eslint-config-typescript'
+import {
+  defineConfigWithVueTs,
+  vueTsConfigs,
+} from '@vue/eslint-config-typescript'
 import { globalIgnores } from 'eslint/config'
 import eslintPluginImport from 'eslint-plugin-import'
 import eslintPluginVue from 'eslint-plugin-vue'
@@ -69,38 +72,28 @@ export default defineConfigWithVueTs(
       'newline-before-return': 'warn',
       'padding-line-between-statements': [
         'warn',
-        { blankLine: 'always', prev: '*', next: ['if', 'for', 'function', 'while'] },
-        { blankLine: 'always', prev: ['if', 'for', 'function', 'while'], next: '*' },
+        {
+          blankLine: 'always',
+          prev: '*',
+          next: ['if', 'for', 'function', 'while'],
+        },
+        {
+          blankLine: 'always',
+          prev: ['if', 'for', 'function', 'while'],
+          next: '*',
+        },
       ],
       'space-before-blocks': ['warn', 'always'],
-
-      // Правила для vue template
-      'vue/max-attributes-per-line': [
-        'error',
-        {
-          singleline: { max: 1 },
-          multiline: { max: 1 },
-        },
-      ],
-
-      'vue/html-self-closing': [
-        'error',
-        {
-          html: {
-            void: 'always',
-            normal: 'never',
-            component: 'always',
-          },
-          svg: 'always',
-          math: 'always',
-        },
-      ],
 
       // Правила импорта
       'import/order': [
         'error',
         {
-          groups: [['builtin', 'external'], 'internal', ['parent', 'sibling', 'index', 'type']],
+          groups: [
+            ['builtin', 'external'],
+            'internal',
+            ['parent', 'sibling', 'index', 'type'],
+          ],
           'newlines-between': 'always',
           alphabetize: {
             order: 'asc',
@@ -295,7 +288,10 @@ export default defineConfigWithVueTs(
       'comma-spacing': 'off',
       '@stylistic/ts/comma-spacing': 'error',
       '@typescript-eslint/consistent-generic-constructors': 'error',
-      '@typescript-eslint/consistent-indexed-object-style': ['error', 'index-signature'],
+      '@typescript-eslint/consistent-indexed-object-style': [
+        'error',
+        'index-signature',
+      ],
       '@typescript-eslint/consistent-type-definitions': 'error',
       'default-param-last': 'off',
       '@typescript-eslint/default-param-last': 'error',
@@ -322,7 +318,8 @@ export default defineConfigWithVueTs(
       '@typescript-eslint/no-require-imports': 'error',
       'no-shadow': 'off',
       '@typescript-eslint/no-shadow': 'error',
-      '@typescript-eslint/no-unnecessary-parameter-property-assignment': 'error',
+      '@typescript-eslint/no-unnecessary-parameter-property-assignment':
+        'error',
       '@typescript-eslint/no-unnecessary-type-constraint': 'error',
       '@typescript-eslint/no-unsafe-declaration-merging': 'error',
       'no-unused-expressions': 'off',

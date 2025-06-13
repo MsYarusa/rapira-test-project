@@ -3,3 +3,8 @@
 
 @import './theme/_colors.css';
 @import './theme/_typography.css';
+
+body {
+  background-color: var(--color-gray-200);
+  color: var(--color-gray-900);
+}

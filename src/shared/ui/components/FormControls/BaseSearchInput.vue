@@ -1,0 +1,82 @@
+<template>
+  <div
+    class="search-input has-focus:ring-primary/32 has-focus:border-primary! hover:border-primary! rounded-md has-focus:ring-2"
+  >
+    <SearchIcon />
+
+    <input
+      v-model="innerValue"
+      type="text"
+      placeholder="Поиск"
+      class="w-full text-[13px] leading-[14px] placeholder-gray-400/50 outline-none"
+    />
+
+    <button
+      class="cursor-pointer p-2 pe-0 outline-0"
+      @click="clearInnerValue"
+    >
+      <XIcon />
+    </button>
+  </div>
+</template>
+
+<script setup lang="ts">
+import { useDebounceFn } from '@vueuse/core'
+import { ref, watch } from 'vue'
+
+import { SearchIcon, XIcon } from '../../assets/icons'
+
+const DEFAULT_DEBOUNCE = 500
+
+interface BaseSearchInputProps {
+  debounce?: number
+}
+
+const { debounce = DEFAULT_DEBOUNCE } = defineProps<BaseSearchInputProps>()
+
+const innerValue = ref<string>('')
+
+const modelValue = defineModel<string>()
+
+const clearInnerValue = (): void => {
+  innerValue.value = ''
+}
+
+const updateModelValue = (): void => {
+  modelValue.value = innerValue.value
+}
+
+const updateModelValueDebounced = useDebounceFn(updateModelValue, debounce)
+
+watch(innerValue, updateModelValueDebounced)
+
+const updateInnerValue = (): void => {
+  if (modelValue.value === innerValue.value) {
+    return
+  }
+
+  innerValue.value = modelValue.value || ''
+}
+
+watch(modelValue, updateInnerValue, { immediate: true })
+</script>
+
+<style scoped lang="scss">
+.search-input {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  width: 100%;
+  max-width: 400px;
+  min-width: fit-content;
+
+  height: 40px;
+
+  padding-left: 10px;
+  padding-right: 10px;
+
+  background-color: var(--color-gray-100);
+  border: 1px solid transparent;
+}
+</style>
