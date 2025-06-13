@@ -5,6 +5,7 @@ import { HomePageConfig } from '@/pages/home'
 
 import { BASE_PAGE_NAME, BASE_PAGE_PATH } from './config'
 import AppLayout from '../layout/AppLayout.vue'
+import { HEADER_NAVIGATION_CONFIG } from './model/navigation/HeaderNavigationConfig'
 import type { ConcreteComponent } from 'vue'
 
 const router = createRouter({
@@ -15,7 +16,7 @@ const router = createRouter({
       name: BASE_PAGE_NAME,
       redirect: HomePageConfig.HOME_PAGE_PATH,
       component: AppLayout,
-      props: {},
+      props: { headerNavigationConfig: HEADER_NAVIGATION_CONFIG },
       children: [
         {
           path: HomePageConfig.HOME_PAGE_PATH,

@@ -74,6 +74,35 @@ export default defineConfigWithVueTs(
       ],
       'space-before-blocks': ['warn', 'always'],
 
+      // Правила для vue template
+      'vue/max-attributes-per-line': [
+        'error',
+        {
+          singleline: { max: 1 },
+          multiline: { max: 1 },
+        },
+      ],
+      'vue/first-attribute-linebreak': [
+        'error',
+        {
+          singleline: 'beside',
+          multiline: 'below',
+        },
+      ],
+
+      'vue/html-self-closing': [
+        'error',
+        {
+          html: {
+            void: 'always',
+            normal: 'never',
+            component: 'always',
+          },
+          svg: 'always',
+          math: 'always',
+        },
+      ],
+
       // Правила импорта
       'import/order': [
         'error',
