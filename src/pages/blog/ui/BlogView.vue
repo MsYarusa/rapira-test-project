@@ -1,6 +1,5 @@
 <template>
   <BlogToolbar />
-  <div>Блог</div>
 </template>
 
 <script setup lang="ts">

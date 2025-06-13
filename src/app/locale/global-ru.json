@@ -1,0 +1,10 @@
+{
+  "app_name": "Мой блог",
+
+  "common": {},
+
+  "navigation": {
+    "home_page_label": "главная",
+    "blog_page_label": "блог"
+  }
+}

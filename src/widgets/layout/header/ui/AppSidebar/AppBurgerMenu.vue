@@ -1,5 +1,9 @@
 <template>
-  <button ref="burgerButton" class="cursor-pointer py-0" @click="emit('click')">
+  <button
+    ref="burgerButton"
+    class="cursor-pointer py-0"
+    @click="emit('click')"
+  >
     <BurgerMenuActiveIcon v-if="active" />
     <BurgerMenuInactiveIcon v-else />
   </button>

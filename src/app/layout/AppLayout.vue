@@ -6,11 +6,9 @@
 </template>
 
 <script setup lang="ts">
-import { AppHeader, type HeaderLinkConfig } from '@/widgets/layout/header'
+import { AppHeader } from '@/widgets/layout/header'
 
-interface AppLayoutProps {
-  headerNavigationConfig: HeaderLinkConfig[]
-}
+import { useHeaderNavigationConfig } from '../router/model/navigation/useHeaderNavigationConfig'
 
-defineProps<AppLayoutProps>()
+const { headerNavigationConfig } = useHeaderNavigationConfig()
 </script>

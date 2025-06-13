@@ -1,11 +1,14 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
-import { BlogPageConfig } from '@/pages/blog'
-import { HomePageConfig } from '@/pages/home'
-
-import { BASE_PAGE_NAME, BASE_PAGE_PATH } from './config'
+import {
+  BASE_PAGE_NAME,
+  BASE_PAGE_PATH,
+  BLOG_PAGE_NAME,
+  BLOG_PAGE_PATH,
+  HOME_PAGE_NAME,
+  HOME_PAGE_PATH,
+} from './config'
 import AppLayout from '../layout/AppLayout.vue'
-import { HEADER_NAVIGATION_CONFIG } from './model/navigation/HeaderNavigationConfig'
 import type { ConcreteComponent } from 'vue'
 
 const router = createRouter({
@@ -14,13 +17,12 @@ const router = createRouter({
     {
       path: BASE_PAGE_PATH,
       name: BASE_PAGE_NAME,
-      redirect: HomePageConfig.HOME_PAGE_PATH,
+      redirect: HOME_PAGE_PATH,
       component: AppLayout,
-      props: { headerNavigationConfig: HEADER_NAVIGATION_CONFIG },
       children: [
         {
-          path: HomePageConfig.HOME_PAGE_PATH,
-          name: HomePageConfig.HOME_PAGE_NAME,
+          path: HOME_PAGE_PATH,
+          name: HOME_PAGE_NAME,
           component: (): ConcreteComponent => {
             return import('@/pages/home').then((module) => {
               return module.HomeView
@@ -28,8 +30,8 @@ const router = createRouter({
           },
         },
         {
-          path: BlogPageConfig.BLOG_PAGE_PATH,
-          name: BlogPageConfig.BLOG_PAGE_NAME,
+          path: BLOG_PAGE_PATH,
+          name: BLOG_PAGE_NAME,
           component: (): ConcreteComponent => {
             return import('@/pages/blog').then((module) => {
               return module.BlogView

@@ -7,7 +7,7 @@
     <input
       v-model="innerValue"
       type="text"
-      placeholder="Поиск"
+      :placeholder="t('search')"
       class="w-full text-[13px] leading-[14px] placeholder-gray-400/50 outline-none"
     />
 
@@ -24,6 +24,8 @@
 import { useDebounceFn } from '@vueuse/core'
 import { ref, watch } from 'vue'
 
+import { useI18nModule } from '@/shared/lib/i18n'
+
 import { SearchIcon, XIcon } from '../../assets/icons'
 
 const DEFAULT_DEBOUNCE = 500
@@ -33,6 +35,10 @@ interface BaseSearchInputProps {
 }
 
 const { debounce = DEFAULT_DEBOUNCE } = defineProps<BaseSearchInputProps>()
+
+const { t } = useI18nModule({
+  messagesObject: { ru: { search: 'Поиск' } },
+})
 
 const innerValue = ref<string>('')
 
