@@ -1,7 +1,13 @@
 {
   "app_name": "Мой блог",
 
-  "common": {},
+  "common": {
+    "search_placeholder": "Поиск",
+
+    "filter_btn": "Фильтр",
+    "clear_filter_btn": "Очистить",
+    "filter_active_btn": "Скрыть фильтр"
+  },
 
   "navigation": {
     "home_page_label": "главная",

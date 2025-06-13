@@ -2,12 +2,12 @@
   <div
     class="search-input has-focus:ring-primary/32 has-focus:border-primary! hover:border-primary! rounded-md has-focus:ring-2"
   >
-    <SearchIcon />
+    <SearchIcon class="size-[14px] fill-gray-400" />
 
     <input
       v-model="innerValue"
       type="text"
-      :placeholder="t('search')"
+      :placeholder="t('common.search_placeholder')"
       class="w-full text-[13px] leading-[14px] placeholder-gray-400/50 outline-none"
     />
 
@@ -15,7 +15,7 @@
       class="cursor-pointer p-2 pe-0 outline-0"
       @click="clearInnerValue"
     >
-      <XIcon />
+      <XIcon class="size-[14px] fill-gray-400" />
     </button>
   </div>
 </template>
@@ -23,8 +23,7 @@
 <script setup lang="ts">
 import { useDebounceFn } from '@vueuse/core'
 import { ref, watch } from 'vue'
-
-import { useI18nModule } from '@/shared/lib/i18n'
+import { useI18n } from 'vue-i18n'
 
 import { SearchIcon, XIcon } from '../../assets/icons'
 
@@ -36,9 +35,7 @@ interface BaseSearchInputProps {
 
 const { debounce = DEFAULT_DEBOUNCE } = defineProps<BaseSearchInputProps>()
 
-const { t } = useI18nModule({
-  messagesObject: { ru: { search: 'Поиск' } },
-})
+const { t } = useI18n()
 
 const innerValue = ref<string>('')
 

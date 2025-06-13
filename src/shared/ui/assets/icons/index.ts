@@ -1,3 +1,5 @@
+import ArrowDownIcon from './base/arrow-down.svg'
+import ArrowUpIcon from './base/arrow-up.svg'
 import XIcon from './base/cross.svg'
 import SearchIcon from './base/magnifier.svg'
 import BurgerMenuActiveIcon from './burger-menu-active.svg'
@@ -10,4 +12,6 @@ export {
   BurgerMenuActiveIcon,
   SearchIcon,
   XIcon,
+  ArrowDownIcon,
+  ArrowUpIcon,
 }

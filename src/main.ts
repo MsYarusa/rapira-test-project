@@ -17,6 +17,7 @@ const i18n = createI18n({
   messages: {
     ru: global_ru,
   },
+  legacy: false,
 })
 
 app.use(i18n)
