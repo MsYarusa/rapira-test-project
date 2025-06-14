@@ -12,7 +12,9 @@
     "lint": "eslint . --fix",
     "format": "prettier --write src/",
     "openapi": "openapi-ts",
-    "prism": "prism mock ./src/shared/api/openapi/specification/openapi.yaml -p 4010"
+    "prism": "prism mock ./src/shared/api/openapi/specification/openapi.yaml -p 4010",
+    "proxy": "node server/mock/proxy.js",
+    "mock": "npx concurrently -k -n PRISM,PROXY -c blue,green \"npm run prism\" \"npm run proxy\""
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.8",
@@ -31,7 +33,6 @@
     "@stylistic/eslint-plugin-ts": "^1.5.1",
     "@tsconfig/node22": "^22.0.1",
     "@types/espree": "^10.1.0",
-    "@types/node": "^22.14.0",
     "@vitejs/plugin-vue": "^5.2.3",
     "@vue/eslint-config-prettier": "^10.2.0",
     "@vue/eslint-config-typescript": "^14.5.0",
@@ -40,6 +41,8 @@
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-vue": "~10.0.0",
     "espree": "^10.4.0",
+    "express": "^5.1.0",
+    "http-proxy-middleware": "^3.0.5",
     "jiti": "^2.4.2",
     "npm-run-all2": "^8.0.4",
     "prettier": "^3.5.3",

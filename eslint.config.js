@@ -36,9 +36,14 @@ export default defineConfigWithVueTs(
   vueTsConfigs.recommended,
 
   {
+    env: {
+      node: true,
+      es2021: true,
+    },
+
     name: 'app/detailed-project-config',
 
-    files: ['**/*.{ts,mts,tsx,vue}'],
+    files: ['**/*.{js,ts,mts,tsx,vue}'],
 
     plugins: {
       '@typescript-eslint': typescript_plugin,
