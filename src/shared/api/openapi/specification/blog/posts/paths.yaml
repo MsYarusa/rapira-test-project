@@ -17,6 +17,15 @@ PostsPath:
                   $ref: './examples/getAllPosts.yaml#/getAllPosts'
       default:
         description: Unexpected error
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                error_code:
+                  type: string
+                error_message:
+                  type: string
 
 PostImageByIdPath:
   get:
@@ -61,3 +70,12 @@ PostImageByIdPath:
                 value: './examples/images/10.jpg'
       default:
         description: Unexpected error
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                error_code:
+                  type: string
+                error_message:
+                  type: string

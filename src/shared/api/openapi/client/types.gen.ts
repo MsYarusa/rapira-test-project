@@ -4,6 +4,11 @@ export type ResourceIdResponse = {
   id: number
 }
 
+export type BaseError = {
+  error_code?: string
+  error_message?: string
+}
+
 export type User = {
   id: number
   first_name: string
@@ -81,8 +86,11 @@ export type GetUserAvatarByIdErrors = {
   /**
    * Unexpected error
    */
-  default: unknown
+  default: BaseError
 }
+
+export type GetUserAvatarByIdError =
+  GetUserAvatarByIdErrors[keyof GetUserAvatarByIdErrors]
 
 export type GetUserAvatarByIdResponses = {
   /**
@@ -105,8 +113,13 @@ export type GetAllPostsErrors = {
   /**
    * Unexpected error
    */
-  default: unknown
+  default: {
+    error_code?: string
+    error_message?: string
+  }
 }
+
+export type GetAllPostsError = GetAllPostsErrors[keyof GetAllPostsErrors]
 
 export type GetAllPostsResponses = {
   /**
@@ -131,8 +144,14 @@ export type GetPostImageByIdErrors = {
   /**
    * Unexpected error
    */
-  default: unknown
+  default: {
+    error_code?: string
+    error_message?: string
+  }
 }
+
+export type GetPostImageByIdError =
+  GetPostImageByIdErrors[keyof GetPostImageByIdErrors]
 
 export type GetPostImageByIdResponses = {
   /**
@@ -157,8 +176,14 @@ export type GetAllCommentsByPostErrors = {
   /**
    * Unexpected error
    */
-  default: unknown
+  default: {
+    error_code?: string
+    error_message?: string
+  }
 }
+
+export type GetAllCommentsByPostError =
+  GetAllCommentsByPostErrors[keyof GetAllCommentsByPostErrors]
 
 export type GetAllCommentsByPostResponses = {
   /**
@@ -181,8 +206,13 @@ export type PostCommentErrors = {
   /**
    * Unexpected error
    */
-  default: unknown
+  default: {
+    error_code?: string
+    error_message?: string
+  }
 }
+
+export type PostCommentError = PostCommentErrors[keyof PostCommentErrors]
 
 export type PostCommentResponses = {
   /**
@@ -205,8 +235,14 @@ export type GetAllCategoriesErrors = {
   /**
    * Unexpected error
    */
-  default: unknown
+  default: {
+    error_code?: string
+    error_message?: string
+  }
 }
+
+export type GetAllCategoriesError =
+  GetAllCategoriesErrors[keyof GetAllCategoriesErrors]
 
 export type GetAllCategoriesResponses = {
   /**

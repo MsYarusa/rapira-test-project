@@ -1,0 +1,7 @@
+BaseError:
+  type: object
+  properties:
+    error_code:
+      type: string
+    error_message:
+      type: string

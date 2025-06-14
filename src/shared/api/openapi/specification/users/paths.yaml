@@ -41,3 +41,7 @@ UserAvatarByIdPath:
                 value: './examples/avatars/10.png'
       default:
         description: Unexpected error
+        content:
+          application/json:
+            schema:
+              $ref: '../common/errors/schemes.yaml#/BaseError'

@@ -50,6 +50,15 @@ CommentsPath:
                   $ref: './examples/getAllCommentsByPost/10.yaml#/getAllCommentsByPost_10'
       default:
         description: Unexpected error
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                error_code:
+                  type: string
+                error_message:
+                  type: string
   post:
     tags:
       - comments
@@ -67,6 +76,15 @@ CommentsPath:
         content:
           application/json:
             schema:
-              $ref: '../../common/schemes.yaml#/ResourceIdResponse'
+              $ref: '../../common/utils/schemes.yaml#/ResourceIdResponse'
       default:
         description: Unexpected error
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                error_code:
+                  type: string
+                error_message:
+                  type: string

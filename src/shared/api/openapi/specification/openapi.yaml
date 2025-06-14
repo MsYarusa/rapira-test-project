@@ -39,7 +39,13 @@ components:
   schemas:
     # Common schemes
     ResourceIdResponse:
-      $ref: './common/schemes.yaml#/ResourceIdResponse'
+      $ref: './common/utils/schemes.yaml#/ResourceIdResponse'
+    BaseError:
+      $ref: './common/errors/schemes.yaml#/BaseError'
+
+    # Я не знаю причину, но hey-api не обрабатывал ссылку на BaseError
+    # внутри директории blog, поэтому там BaseError дублируется каждый раз.
+    # В других местах ссылка обрабатывается. Swagger UI обрабатывал ссылки корретно.
 
     # User schemes
     User:

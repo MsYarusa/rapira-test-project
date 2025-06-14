@@ -17,3 +17,12 @@ CategoriesPath:
                   $ref: './examples/getAllCategories.yaml#/getAllCategories'
       default:
         description: Unexpected error
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                error_code:
+                  type: string
+                error_message:
+                  type: string

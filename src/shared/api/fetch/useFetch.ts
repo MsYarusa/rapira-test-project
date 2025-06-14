@@ -1,12 +1,14 @@
 import { shallowRef, computed } from 'vue'
 
 import { Statuses } from '../config'
-import type { FetchResponse, ServerError, ApiServiceReturn } from '../types'
+import type { ServerError, ApiServiceReturn } from '../types'
 
 interface FetchParams<DataType, ErrorType, RequestOptionsType> {
   requestMethod: (
     options: RequestOptionsType,
-  ) => Promise<FetchResponse<DataType, ErrorType>>
+  ) => Promise<
+    { data: DataType; error: undefined } | { error: ErrorType; data: undefined }
+  >
 }
 
 interface FetchReturn<DataType, ErrorType, RequestOptionsType>
@@ -58,7 +60,7 @@ export function useFetch<DataType, ErrorType, RequestOptionsType = void>({
   return {
     sendRequest,
     clearError,
-    data: responseData,
+    response: responseData,
     error: responseError,
     status: responseStatus,
     isLoading,
