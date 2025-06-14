@@ -1,8 +1,10 @@
 import express from 'express'
 import { createProxyMiddleware } from 'http-proxy-middleware'
 
-const PRISM_PATH = 'http://localhost:4010'
-const PROXY_PORT = 3000
+import 'dotenv/config'
+
+const MOCK_PATH = `http://localhost:4010`
+const PROXY_PORT = process.env.API_MOCK_PROXY_PORT || 3000
 
 /*
   Прокси сервер проксирует вопросы для мок сервера.
@@ -46,12 +48,12 @@ app.use(
   },
 
   createProxyMiddleware({
-    target: PRISM_PATH,
+    target: MOCK_PATH,
     changeOrigin: true,
     logger: console,
   }),
 )
 
 app.listen(PROXY_PORT, () => {
-  console.log('Proxy with header injector running at http://localhost:3000')
+  console.log(`Прокси сервер запущен на http://localhost:${PROXY_PORT}`)
 })
