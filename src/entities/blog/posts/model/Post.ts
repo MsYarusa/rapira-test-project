@@ -7,8 +7,8 @@ export interface Post {
   description: string
   content: string
   date: Date
-  readTime: number // In minutes
+  readTime: number // В минутах
   imageUrl: string
+  commentsCount: number // Запрашиваем комментарии только при необходимости
   categories: Category[]
-  comments: Comment[]
 }

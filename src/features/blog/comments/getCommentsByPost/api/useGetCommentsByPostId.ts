@@ -1,3 +1,5 @@
+import { watch } from 'vue'
+
 import { useFetch, type ApiServiceReturn } from '@/shared/api'
 import {
   getAllCommentsByPost as requestMethod,
@@ -5,13 +7,13 @@ import {
   type GetAllCommentsByPostError,
   type GetAllCommentsByPostResponse,
 } from '@/shared/api/openapi/client'
-import type { Comment } from '../../../../../entities/blog/comments/model/Comment'
-import { watch } from 'vue'
-import { mapUserApiToUser, type User } from '@/entities/users'
+
 import {
+  type Comment,
   mapCommentApiToComment,
   useCommentsStore,
 } from '@/entities/blog/comments'
+import { mapUserApiToUser, type User } from '@/entities/users'
 
 interface useGetCommentsByPostIdReturn
   extends ApiServiceReturn<

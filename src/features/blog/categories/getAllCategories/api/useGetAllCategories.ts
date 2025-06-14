@@ -1,7 +1,5 @@
-import {
-  mapCategoryApiToCategory,
-  useCategoriesStore,
-} from '@/entities/blog/categories'
+import { watch } from 'vue'
+
 import { useFetch, type ApiServiceReturn } from '@/shared/api'
 import {
   getAllCategories as requestMethod,
@@ -9,7 +7,11 @@ import {
   type GetAllCategoriesError,
   type GetAllCategoriesResponse,
 } from '@/shared/api/openapi/client'
-import { watch } from 'vue'
+
+import {
+  mapCategoryApiToCategory,
+  useCategoriesStore,
+} from '@/entities/blog/categories'
 
 interface useGetAllCategoriesReturn
   extends ApiServiceReturn<GetAllCategoriesResponse, GetAllCategoriesError> {

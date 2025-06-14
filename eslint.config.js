@@ -30,17 +30,17 @@ const eslintParser = {
 
 // Экспорт основной конфигурации ESLint
 export default defineConfigWithVueTs(
-  globalIgnores(['**/dist/**', '**/dist-ssr/**', '**/coverage/**']),
+  globalIgnores([
+    '**/dist/**',
+    '**/dist-ssr/**',
+    '**/coverage/**',
+    '**/openapi/client/**',
+  ]),
 
   ...eslintPluginVue.configs['flat/recommended'],
   vueTsConfigs.recommended,
 
   {
-    env: {
-      node: true,
-      es2021: true,
-    },
-
     name: 'app/detailed-project-config',
 
     files: ['**/*.{js,ts,mts,tsx,vue}'],
