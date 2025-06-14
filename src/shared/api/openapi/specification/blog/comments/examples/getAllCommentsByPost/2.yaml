@@ -1,0 +1,44 @@
+getAllCommentsByPost_2:
+  data:
+    - id: 2
+      date: 2025-04-06T09:06:00.000Z
+      content: Вау, какой крутой кадр!
+      user_id: 2
+    - id: 3
+      date: 2025-04-06T09:07:00.000Z
+      content: Просто супер, обожаю такое!
+      user_id: 3
+    - id: 4
+      date: 2025-04-06T09:08:00.000Z
+      content: Отличный момент пойман!
+      user_id: 5
+    - id: 5
+      date: 2025-04-06T09:09:00.000Z
+      content: Прям милота зашкаливает!
+      user_id: 5
+    - id: 6
+      date: 2025-04-06T09:10:00.000Z
+      content: Залипаю на эту фотку!
+      user_id: 6
+  related:
+    users:
+      - id: 2
+        first_name: Аркадий
+        last_name: Филонов
+        links:
+          avatar: http://localhost:3000/blog/posts/image/2
+      - id: 3
+        first_name: Катя
+        last_name: Иванова
+        links:
+          avatar: http://localhost:3000/blog/posts/image/3
+      - id: 5
+        first_name: Марк
+        last_name: Пак
+        links:
+          avatar: http://localhost:3000/blog/posts/image/5
+      - id: 6
+        first_name: Патриция
+        last_name: Фриман
+        links:
+          avatar: http://localhost:3000/blog/posts/image/6

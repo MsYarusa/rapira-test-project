@@ -1,0 +1,61 @@
+Post:
+  type: object
+  properties:
+    id:
+      type: integer
+    title:
+      type: string
+    description:
+      type: string
+    content:
+      type: string
+    date:
+      type: string
+      format: date
+    read_time:
+      type: integer
+    categories_ids:
+      type: array
+      items:
+        type: integer
+    comments_ids:
+      type: array
+      items:
+        type: integer
+    links:
+      type: object
+      properties:
+        image: string
+        format: uri
+      required:
+        - image
+  required:
+    - id
+    - title
+    - description
+    - content
+    - date
+    - read_time
+    - categories_ids
+    - comments_ids
+    - links
+
+PostResponseBodyList:
+  type: object
+  properties:
+    data:
+      type: array
+      items:
+        $ref: '#/Post'
+    related:
+      type: object
+      properties:
+        categories:
+          type: array
+          items:
+            $ref: '../categories/schemes.yaml#/Category'
+      required:
+        - categories
+  required:
+    - data
+    - related

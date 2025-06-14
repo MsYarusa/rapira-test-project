@@ -1,0 +1,55 @@
+Comment:
+  type: object
+  properties:
+    id:
+      type: integer
+    date:
+      type: string
+      format: date-time
+    content:
+      type: string
+    user_id:
+      type: integer
+  required:
+    - id
+    - date
+    - content
+    - user_id
+
+CommentResponseBodyList:
+  type: object
+  properties:
+    data:
+      type: array
+      items:
+        $ref: '#/Comment'
+    related:
+      type: object
+      properties:
+        users:
+          type: array
+          items:
+            $ref: '../../users/schemes.yaml#/User'
+      required:
+        - users
+  required:
+    - data
+    - related
+
+CommentRequestBody:
+  type: object
+  properties:
+    date:
+      type: string
+      format: date-time
+    content:
+      type: string
+    user_id:
+      type: integer
+    post_id:
+      type: integer
+  required:
+    - date
+    - content
+    - user_id
+    - post_id

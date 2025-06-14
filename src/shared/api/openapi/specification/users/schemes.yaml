@@ -1,0 +1,27 @@
+User:
+  type: object
+  properties:
+    id:
+      type: integer
+    first_name:
+      type: string
+    last_name:
+      type: string
+    links:
+      type: object
+      properties:
+        avatar:
+          type: string
+          format: uri
+      required:
+        - avatar
+  required:
+    - id
+    - first_name
+    - last_name
+
+UserResponseBody:
+  type: object
+  properties:
+    data:
+      $ref: '#/User'

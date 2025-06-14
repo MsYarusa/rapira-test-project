@@ -1,0 +1,72 @@
+CommentsPath:
+  get:
+    tags:
+      - comments
+    summary: Gets all comments for the post
+    parameters:
+      - name: post_id
+        in: query
+        required: true
+        schema:
+          type: integer
+    operationId: getAllCommentsByPost
+    responses:
+      200:
+        description: Successfully obtained a list of the comments for the post
+        content:
+          application/json:
+            schema:
+              $ref: './schemes.yaml#/CommentResponseBodyList'
+            examples:
+              getAllCommentsByPost_1:
+                value:
+                  $ref: './examples/getAllCommentsByPost/1.yaml#/getAllCommentsByPost_1'
+              getAllCommentsByPost_2:
+                value:
+                  $ref: './examples/getAllCommentsByPost/2.yaml#/getAllCommentsByPost_2'
+              getAllCommentsByPost_3:
+                value:
+                  $ref: './examples/getAllCommentsByPost/3.yaml#/getAllCommentsByPost_3'
+              getAllCommentsByPost_4:
+                value:
+                  $ref: './examples/getAllCommentsByPost/4.yaml#/getAllCommentsByPost_4'
+              getAllCommentsByPost_5:
+                value:
+                  $ref: './examples/getAllCommentsByPost/5.yaml#/getAllCommentsByPost_5'
+              getAllCommentsByPost_6:
+                value:
+                  $ref: './examples/getAllCommentsByPost/6.yaml#/getAllCommentsByPost_6'
+              getAllCommentsByPost_7:
+                value:
+                  $ref: './examples/getAllCommentsByPost/7.yaml#/getAllCommentsByPost_7'
+              getAllCommentsByPost_8:
+                value:
+                  $ref: './examples/getAllCommentsByPost/8.yaml#/getAllCommentsByPost_8'
+              getAllCommentsByPost_9:
+                value:
+                  $ref: './examples/getAllCommentsByPost/9.yaml#/getAllCommentsByPost_9'
+              getAllCommentsByPost_10:
+                value:
+                  $ref: './examples/getAllCommentsByPost/10.yaml#/getAllCommentsByPost_10'
+      default:
+        description: Unexpected error
+  post:
+    tags:
+      - comments
+    summary: Post a new comment for the post
+    operationId: postComment
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: './schemes.yaml#/CommentRequestBody'
+    responses:
+      201:
+        description: Successfully posted the comment
+        content:
+          application/json:
+            schema:
+              $ref: '../../common/schemes.yaml#/ResourceIdResponse'
+      default:
+        description: Unexpected error

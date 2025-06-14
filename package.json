@@ -10,7 +10,9 @@
     "build-only": "vite build",
     "type-check": "vue-tsc --build",
     "lint": "eslint . --fix",
-    "format": "prettier --write src/"
+    "format": "prettier --write src/",
+    "openapi": "openapi-ts",
+    "prism": "prism mock ./src/shared/api/openapi/specification/openapi.yaml -p 4010"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.8",
@@ -23,6 +25,9 @@
     "vue-router": "^4.5.0"
   },
   "devDependencies": {
+    "@hey-api/client-axios": "^0.9.1",
+    "@hey-api/openapi-ts": "^0.72.2",
+    "@stoplight/prism-cli": "^5.14.2",
     "@stylistic/eslint-plugin-ts": "^1.5.1",
     "@tsconfig/node22": "^22.0.1",
     "@types/espree": "^10.1.0",

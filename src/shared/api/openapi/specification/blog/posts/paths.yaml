@@ -1,0 +1,63 @@
+PostsPath:
+  get:
+    tags:
+      - posts
+    summary: Gets all posts
+    operationId: getAllPosts
+    responses:
+      200:
+        description: Successfully obtained a list of the posts
+        content:
+          application/json:
+            schema:
+              $ref: './schemes.yaml#/PostResponseBodyList'
+            examples:
+              getAllPosts:
+                value:
+                  $ref: './examples/getAllPosts.yaml#/getAllPosts'
+      default:
+        description: Unexpected error
+
+PostImageByIdPath:
+  get:
+    tags:
+      - posts
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+    summary: Gets the image for the post by id
+    operationId: getPostImageById
+    responses:
+      200:
+        description: Successfully obtained the image for the post
+        content:
+          image/jpg:
+            schema:
+              type: string
+              format: binary
+            examples:
+              getPostImageById_1:
+                value: './examples/images/1.jpg'
+              getPostImageById_2:
+                value: './examples/images/2.jpg'
+              getPostImageById_3:
+                value: './examples/images/3.jpg'
+              getPostImageById_4:
+                value: './examples/images/4.jpg'
+              getPostImageById_5:
+                value: './examples/images/5.jpg'
+              getPostImageById_6:
+                value: './examples/images/6.jpg'
+              getPostImageById_7:
+                value: './examples/images/7.jpg'
+              getPostImageById_8:
+                value: './examples/images/8.jpg'
+              getPostImageById_9:
+                value: './examples/images/9.jpg'
+              getPostImageById_10:
+                value: './examples/images/10.jpg'
+      default:
+        description: Unexpected error

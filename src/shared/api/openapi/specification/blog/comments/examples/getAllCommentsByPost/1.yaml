@@ -1,0 +1,13 @@
+getAllCommentsByPost_1:
+  data:
+    - id: 1
+      date: 2025-04-09T04:54:00.000Z
+      content: Эти мгновения наполняют наши сердца радостью и любовью.
+      user_id: 1
+  related:
+    users:
+      - id: 1
+        first_name: Мира
+        last_name: Гусева
+        links:
+          avatar: http://localhost:3000/blog/posts/image/1

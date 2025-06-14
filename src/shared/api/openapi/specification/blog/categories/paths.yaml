@@ -1,0 +1,19 @@
+CategoriesPath:
+  get:
+    tags:
+      - categories
+    summary: Gets all categories
+    operationId: getAllCategories
+    responses:
+      200:
+        description: Successfully obtained a list of the categories
+        content:
+          application/json:
+            schema:
+              $ref: './schemes.yaml#/CategoryResponseBodyList'
+            examples:
+              getAllCategories:
+                value:
+                  $ref: './examples/getAllCategories.yaml#/getAllCategories'
+      default:
+        description: Unexpected error

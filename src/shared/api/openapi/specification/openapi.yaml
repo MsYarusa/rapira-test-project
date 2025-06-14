@@ -1,0 +1,103 @@
+openapi: 3.0.3
+info:
+  title: Rapira test project api
+  version: 1.0.0
+servers:
+  - url: http://127.0.0.1:4010
+    description: Static prism server
+  - url: http://localhost:3000
+    description: Proxy + dynamic prism server
+tags:
+  - name: users
+    description: Everything related to the users
+  - name: posts
+    description: Everything related to the posts
+  - name: categories
+    description: Everything related to the post categories
+  - name: comments
+    description: Everything related to the  commets
+paths:
+  # Users
+  /users/avatar/{id}:
+    $ref: './users/paths.yaml#/UserAvatarByIdPath'
+
+  # Posts
+  /blog/posts:
+    $ref: './blog/posts/paths.yaml#/PostsPath'
+  /blog/posts/image/{id}:
+    $ref: './blog/posts/paths.yaml#/PostImageByIdPath'
+
+  # Comments
+  /blog/comments:
+    $ref: './blog/comments/paths.yaml#/CommentsPath'
+
+  # Categories
+  /blog/categories:
+    $ref: './blog/categories/paths.yaml#/CategoriesPath'
+
+components:
+  schemas:
+    # Common schemes
+    ResourceIdResponse:
+      $ref: './common/schemes.yaml#/ResourceIdResponse'
+
+    # User schemes
+    User:
+      $ref: './users/schemes.yaml#/User'
+    UserResponseBody:
+      $ref: './users/schemes.yaml#/UserResponseBody'
+
+    # Post schemes
+    Post:
+      $ref: './blog/posts/schemes.yaml#/Post'
+    PostResponseBodyList:
+      $ref: './blog/posts/schemes.yaml#/PostResponseBodyList'
+
+    # Comment schemes
+    Comment:
+      $ref: './blog/comments/schemes.yaml#/Comment'
+    CommentResponseBodyList:
+      $ref: './blog/comments/schemes.yaml#/CommentResponseBodyList'
+    CommentRequestBody:
+      $ref: './blog/comments/schemes.yaml#/CommentRequestBody'
+
+    # Category schemes
+    Category:
+      $ref: './blog/categories/schemes.yaml#/Category'
+    CategoryResponseBodyList:
+      $ref: './blog/categories/schemes.yaml#/CategoryResponseBodyList'
+
+  examples:
+    # Users
+    getAllUsers:
+      $ref: './users/examples/getAllUsers.yaml#/getAllUsers'
+
+    # Posts
+    getAllPosts:
+      $ref: './blog/posts/examples/getAllPosts.yaml#/getAllPosts'
+
+    # Comments
+    getAllCommentsByPost_1:
+      $ref: './blog/comments/examples/getAllCommentsByPost/1.yaml#/getAllCommentsByPost_1'
+    getAllCommentsByPost_2:
+      $ref: './blog/comments/examples/getAllCommentsByPost/2.yaml#/getAllCommentsByPost_2'
+    getAllCommentsByPost_3:
+      $ref: './blog/comments/examples/getAllCommentsByPost/3.yaml#/getAllCommentsByPost_3'
+    getAllCommentsByPost_4:
+      $ref: './blog/comments/examples/getAllCommentsByPost/4.yaml#/getAllCommentsByPost_4'
+    getAllCommentsByPost_5:
+      $ref: './blog/comments/examples/getAllCommentsByPost/5.yaml#/getAllCommentsByPost_5'
+    getAllCommentsByPost_6:
+      $ref: './blog/comments/examples/getAllCommentsByPost/6.yaml#/getAllCommentsByPost_6'
+    getAllCommentsByPost_7:
+      $ref: './blog/comments/examples/getAllCommentsByPost/7.yaml#/getAllCommentsByPost_7'
+    getAllCommentsByPost_8:
+      $ref: './blog/comments/examples/getAllCommentsByPost/8.yaml#/getAllCommentsByPost_8'
+    getAllCommentsByPost_9:
+      $ref: './blog/comments/examples/getAllCommentsByPost/9.yaml#/getAllCommentsByPost_9'
+    getAllCommentsByPost_10:
+      $ref: './blog/comments/examples/getAllCommentsByPost/10.yaml#/getAllCommentsByPost_10'
+
+    # Categories
+    getAllCategories:
+      $ref: './blog/categories/examples/getAllCategories.yaml#/getAllCategories'

@@ -1,0 +1,94 @@
+getAllCommentsByPost_7:
+  data:
+    - id: 25
+      date: 2025-04-05T17:15:43.000Z
+      content: Какая теплая и искренняя фотография! Видно, сколько в ней любви.
+      user_id: 9
+    - id: 26
+      date: 2025-04-05T17:16:43.000Z
+      content: Эти улыбки наполняют сердце радостью. Прекрасная семья!
+      user_id: 3
+    - id: 27
+      date: 2025-04-05T17:18:43.000Z
+      content: Момент счастья, запечатленный навечно. Очень трогательно.
+      user_id: 7
+    - id: 28
+      date: 2025-04-05T17:18:43.000Z
+      content: Настоящее тепло и нежность в одном кадре.
+      user_id: 1
+    - id: 29
+      date: 2025-04-05T17:19:43.000Z
+      content: Глаза светятся счастьем! Прекрасная связь между ними.
+      user_id: 5
+    - id: 30
+      date: 2025-04-05T17:20:43.000Z
+      content: Такие фотографии вдохновляют и дарят надежду.
+      user_id: 4
+    - id: 31
+      date: 2025-04-05T17:21:43.000Z
+      content: Видно, как они дорожат друг другом. Замечательно!
+      user_id: 10
+    - id: 32
+      date: 2025-04-05T17:22:43.000Z
+      content: Очень позитивное фото, заряжает хорошим настроением.
+      user_id: 6
+    - id: 33
+      date: 2025-04-05T17:23:43.000Z
+      content: Просто чудесно! Такие моменты бесценны.
+      user_id: 2
+    - id: 34
+      date: 2025-04-05T18:50:43.000Z
+      content: Искренние эмоции, это так здорово видеть.
+      user_id: 8
+  related:
+    users:
+      - id: 1
+        first_name: Мира
+        last_name: Гусева
+        links:
+          avatar: http://localhost:3000/blog/posts/image/1
+      - id: 2
+        first_name: Аркадий
+        last_name: Филонов
+        links:
+          avatar: http://localhost:3000/blog/posts/image/2
+      - id: 3
+        first_name: Катя
+        last_name: Иванова
+        links:
+          avatar: http://localhost:3000/blog/posts/image/3
+      - id: 4
+        first_name: Кевин
+        last_name: Клейн
+        links:
+          avatar: http://localhost:3000/blog/posts/image/4
+      - id: 5
+        first_name: Марк
+        last_name: Пак
+        links:
+          avatar: http://localhost:3000/blog/posts/image/5
+      - id: 6
+        first_name: Патриция
+        last_name: Фриман
+        links:
+          avatar: http://localhost:3000/blog/posts/image/6
+      - id: 7
+        first_name: Павел
+        last_name: Задорожный
+        links:
+          avatar: http://localhost:3000/blog/posts/image/7
+      - id: 8
+        first_name: Соня
+        last_name: Полушкина
+        links:
+          avatar: http://localhost:3000/blog/posts/image/8
+      - id: 9
+        first_name: Анастасия
+        last_name: Петровенко
+        links:
+          avatar: http://localhost:3000/blog/posts/image/9
+      - id: 10
+        first_name: Маргарита
+        last_name: Сторожевская
+        links:
+          avatar: http://localhost:3000/blog/posts/image/10

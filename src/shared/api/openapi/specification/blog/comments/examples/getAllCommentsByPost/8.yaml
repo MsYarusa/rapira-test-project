@@ -1,0 +1,58 @@
+getAllCommentsByPost_8:
+  data:
+    - id: 41
+      date: 2025-04-04T16:20:00.000Z
+      content: Какая потрясающая детализация! Настоящий шедевр.
+      user_id: 2
+    - id: 42
+      date: 2025-04-04T16:22:00.000Z
+      content: Величественная роспись, кажется, что фигуры вот-вот оживут.
+      user_id: 8
+    - id: 43
+      date: 2025-04-04T17:33:00.000Z
+      content: Столько персонажей и динамики, можно часами рассматривать.
+      user_id: 6
+    - id: 44
+      date: 2025-04-04T17:34:00.000Z
+      content: Чувствуется масштаб и грандиозность эпохи.
+      user_id: 1
+    - id: 45
+      date: 2025-04-04T17:35:00.000Z
+      content: Невероятная игра света и тени. Просто завораживает.
+      user_id: 9
+    - id: 46
+      date: 2025-04-04T18:56:00.000Z
+      content: Как будто портал в античные мифы. Потрясающе!
+      user_id: 4
+  related:
+    users:
+      - id: 1
+        first_name: Мира
+        last_name: Гусева
+        links:
+          avatar: http://localhost:3000/blog/posts/image/1
+      - id: 2
+        first_name: Аркадий
+        last_name: Филонов
+        links:
+          avatar: http://localhost:3000/blog/posts/image/2
+      - id: 4
+        first_name: Кевин
+        last_name: Клейн
+        links:
+          avatar: http://localhost:3000/blog/posts/image/4
+      - id: 6
+        first_name: Патриция
+        last_name: Фриман
+        links:
+          avatar: http://localhost:3000/blog/posts/image/6
+      - id: 8
+        first_name: Соня
+        last_name: Полушкина
+        links:
+          avatar: http://localhost:3000/blog/posts/image/8
+      - id: 9
+        first_name: Анастасия
+        last_name: Петровенко
+        links:
+          avatar: http://localhost:3000/blog/posts/image/9

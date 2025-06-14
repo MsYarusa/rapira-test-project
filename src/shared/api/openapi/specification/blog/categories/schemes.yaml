@@ -1,0 +1,20 @@
+Category:
+  type: object
+  properties:
+    id:
+      type: integer
+    title:
+      type: string
+  required:
+    - id
+    - title
+
+CategoryResponseBodyList:
+  type: object
+  properties:
+    data:
+      type: array
+      items:
+        $ref: '#/Category'
+  required:
+    - data
