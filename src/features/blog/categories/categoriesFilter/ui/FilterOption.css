@@ -1,0 +1,17 @@
+@reference '@/shared/ui/styles/tailwind/index.css';
+
+.filter-option {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+
+  cursor: pointer;
+
+  padding: 6px 14px;
+
+  @apply bg-primary-light text-primary hover:text-primary-active rounded-[20px] text-sm leading-0 sm:text-base;
+}
+
+.filter-option svg {
+  @apply size-4 sm:size-5;
+}

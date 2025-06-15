@@ -1,0 +1,9 @@
+@reference '@/shared/ui/styles/tailwind/index.css';
+
+.toggle-filter-btn {
+  @apply flex cursor-pointer items-center gap-1;
+}
+
+.toggle-filter-btn svg {
+  @apply size-4 fill-gray-400 group-hover:fill-gray-500;
+}

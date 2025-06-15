@@ -9,21 +9,15 @@
     </button>
 
     <button
-      class="group flex cursor-pointer items-center gap-1 text-gray-400 hover:text-gray-500"
+      class="group toggle-filter-btn text-gray-400 hover:text-gray-500"
       @click="toggleActive"
     >
       <span v-if="filterIsActive">{{ t('common.filter_active_btn') }}</span>
 
       <span v-else>{{ t('common.filter_btn') }}</span>
 
-      <ArrowUpIcon
-        v-if="filterIsActive"
-        class="size-[16px] fill-gray-400 group-hover:fill-gray-500"
-      />
-      <ArrowDownIcon
-        v-else
-        class="size-[16px] fill-gray-400 group-hover:fill-gray-500"
-      />
+      <ArrowUpIcon v-if="filterIsActive" />
+      <ArrowDownIcon v-else />
     </button>
   </div>
 </template>
@@ -54,4 +48,6 @@ const toggleActive = (): void => {
 const { t } = useI18n()
 </script>
 
-<style scoped></style>
+<style scoped lang="css">
+@import './FilterVisibilityButtons.css';
+</style>

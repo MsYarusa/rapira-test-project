@@ -1,14 +1,14 @@
 <template>
   <div class="w-full border-t border-t-gray-100 py-5">
     <div class="flex w-full flex-wrap gap-2">
-      <CategoryFilterOption
+      <FilterOption
         v-for="category of categories"
         :key="category.id"
         v-model="selectedCategories"
         :category="category"
       />
       <template v-if="categories.length === 0 && isLoading">
-        <CategoryFilterOptionPlaceholder
+        <FilterOptionPlaceholder
           v-for="i in NUMBER_OF_PLACEHOLDERS"
           :key="i"
         />
@@ -20,8 +20,8 @@
 <script setup lang="ts">
 import type { Category } from '@/entities/blog/categories'
 
-import CategoryFilterOption from './CategoryFilterOption.vue'
-import CategoryFilterOptionPlaceholder from './CategoryFilterOptionPlaceholder.vue'
+import FilterOption from './FilterOption.vue'
+import FilterOptionPlaceholder from './FilterOptionPlaceholder.vue'
 
 const NUMBER_OF_PLACEHOLDERS = 6
 

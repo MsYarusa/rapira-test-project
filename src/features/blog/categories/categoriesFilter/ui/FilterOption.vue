@@ -1,6 +1,6 @@
 <template>
   <button
-    class="category-filter-option group bg-primary-light round text-primary hover:text-primary-active rounded-[20px] leading-0"
+    class="group filter-option cursor-pointer"
     :class="
       checked &&
       'bg-primary! hover:bg-primary-active! text-white! hover:text-white!'
@@ -9,14 +9,17 @@
   >
     {{ capitalizeString(category.title) }}
 
-    <div v-if="checked">
-      <CheckIcon class="size-[20px] fill-white group-hover:hidden" />
-      <XIcon class="hidden size-[20px] fill-white group-hover:block" />
+    <div
+      v-if="checked"
+      class="[&>svg]:fill-white"
+    >
+      <CheckIcon class="group-hover:hidden" />
+      <XIcon class="hidden group-hover:block" />
     </div>
 
     <PlusIcon
       v-else
-      class="fill-primary group-hover:fill-primary-active size-[20px]"
+      class="fill-primary group-hover:fill-primary-active"
     />
   </button>
 </template>
@@ -56,14 +59,6 @@ const toggledChecked = (): void => {
 }
 </script>
 
-<style lang="scss">
-.category-filter-option {
-  display: flex;
-  gap: 6px;
-  align-items: center;
-
-  cursor: pointer;
-
-  padding: 6px 14px;
-}
+<style lang="css" scoped>
+@import './FilterOption.css';
 </style>
