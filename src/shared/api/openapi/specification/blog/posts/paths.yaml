@@ -47,27 +47,6 @@ PostImageByIdPath:
             schema:
               type: string
               format: binary
-            examples:
-              getPostImageById_1:
-                value: './examples/images/1.jpg'
-              getPostImageById_2:
-                value: './examples/images/2.jpg'
-              getPostImageById_3:
-                value: './examples/images/3.jpg'
-              getPostImageById_4:
-                value: './examples/images/4.jpg'
-              getPostImageById_5:
-                value: './examples/images/5.jpg'
-              getPostImageById_6:
-                value: './examples/images/6.jpg'
-              getPostImageById_7:
-                value: './examples/images/7.jpg'
-              getPostImageById_8:
-                value: './examples/images/8.jpg'
-              getPostImageById_9:
-                value: './examples/images/9.jpg'
-              getPostImageById_10:
-                value: './examples/images/10.jpg'
       default:
         description: Unexpected error
         content:

@@ -36,6 +36,7 @@ export default defineConfigWithVueTs(
     '**/coverage/**',
     '**/openapi/client/**',
     'eslint.config.js',
+    'server/**',
   ]),
 
   ...eslintPluginVue.configs['flat/recommended'],
@@ -68,6 +69,7 @@ export default defineConfigWithVueTs(
         console: 'readonly',
         setTimeout: 'readonly',
         process: 'readonly',
+        __dirname: 'readonly',
       },
     },
 

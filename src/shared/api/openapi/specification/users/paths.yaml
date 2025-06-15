@@ -18,27 +18,6 @@ UserAvatarByIdPath:
             schema:
               type: string
               format: binary
-            examples:
-              getUserAvatarById_1:
-                value: './examples/avatars/1.png'
-              getUserAvatarById_2:
-                value: './examples/avatars/2.png'
-              getUserAvatarById_3:
-                value: './examples/avatars/3.png'
-              getUserAvatarById_4:
-                value: './examples/avatars/4.png'
-              getUserAvatarById_5:
-                value: './examples/avatars/5.png'
-              getUserAvatarById_6:
-                value: './examples/avatars/6.png'
-              getUserAvatarById_7:
-                value: './examples/avatars/7.png'
-              getUserAvatarById_8:
-                value: './examples/avatars/8.png'
-              getUserAvatarById_9:
-                value: './examples/avatars/9.png'
-              getUserAvatarById_10:
-                value: './examples/avatars/10.png'
       default:
         description: Unexpected error
         content:
