@@ -44,7 +44,8 @@ app.get('/blog/posts/image/:id', (req, res, next) => {
 app.use(
   '/',
   (req, res, next) => {
-    next()
+    // Симулируем задержку ответа
+    setTimeout(next, 2000)
   },
 
   createProxyMiddleware({
