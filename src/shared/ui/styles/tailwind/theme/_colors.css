@@ -2,4 +2,8 @@
   --color-primary: #3e97ff;
   --color-primary-active: #2884ef;
   --color-primary-light: #eef6ff;
+
+  --color-primary-alpha-75: #3e98ffbf;
+  --color-primary-alpha-50: #3e98ff80;
+  --color-primary-alpha-25: #3e98ff40;
 }

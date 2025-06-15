@@ -14,7 +14,9 @@
         </div>
 
         <FilterVisibilityButtons
+          v-model:active="filterIsActive"
           :filter-is-empty="filteredCategories.length === 0"
+          @clear="clearFilteredCategories"
         />
       </div>
 
@@ -23,24 +25,54 @@
         class="max-w-full! sm:hidden!"
       />
     </div>
+
+    <CategoriesFilter
+      v-if="filterIsActive"
+      v-model="filteredCategories"
+      :categories="categoriesStore.categories"
+      :is-loading="isLoading"
+    />
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
 
 import { useI18nModule } from '@/shared/lib/i18n'
 import { BaseSearchInput } from '@/shared/ui/components'
 
-import type { Category } from '@/entities/blog/categories'
+import { useCategoriesStore, type Category } from '@/entities/blog/categories'
+
+import { CategoriesFilter } from '@/features/blog/categories/categoriesFilter'
+import { useGetAllCategories } from '@/features/blog/categories/getAllCategories'
 
 import FilterVisibilityButtons from './FilterVisibilityButtons.vue'
 
-const filteredCategories = ref<Category[]>([])
+const filterIsActive = ref<boolean>(false)
+
+const filteredCategories = defineModel<Category[]>('post-categories', {
+  default: [],
+})
+
+const searchValue = defineModel<string>('post-title')
+
+const clearFilteredCategories = (): void => {
+  filteredCategories.value = []
+}
+
+const { getAllCategories, isLoading } = useGetAllCategories()
+
+const categoriesStore = useCategoriesStore()
+
+watch(filterIsActive, () => {
+  if (!filterIsActive.value || categoriesStore.categories.length) {
+    return
+  }
+
+  getAllCategories()
+})
 
 const { t } = useI18nModule({
   messagesObject: { ru: { blog_page_title: 'Блог' } },
 })
-
-const searchValue = ref<string>('')
 </script>
