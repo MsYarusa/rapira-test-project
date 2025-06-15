@@ -1,6 +1,6 @@
 <template>
   <div
-    v-if="filteredPosts.length"
+    v-if="filteredPosts.length || isLoading"
     class="post-list__container grid grid-cols-1 justify-center gap-x-[20px] gap-y-[20px] sm:grid-cols-2 sm:gap-y-[25px] lg:grid-cols-3 lg:gap-y-[40px]"
   >
     <PostCard
@@ -8,6 +8,13 @@
       :key="post.id"
       :post="post"
     />
+
+    <template v-if="isLoading && filteredPosts.length === 0">
+      <PostCardPlaceholder
+        v-for="i in POSTS_PLACEHOLDER_COUNT"
+        :key="i"
+      />
+    </template>
   </div>
 
   <div
@@ -29,9 +36,12 @@ import { usePostsStore, type Post } from '@/entities/blog/posts'
 import { useGetAllPosts } from '@/features/blog/posts/getAllPosts'
 
 import PostCard from './PostCard.vue'
+import PostCardPlaceholder from './PostCardPlaceholder.vue'
+
+const POSTS_PLACEHOLDER_COUNT = 4
 
 const postsStore = usePostsStore()
-const { getAllPosts } = useGetAllPosts()
+const { getAllPosts, isLoading } = useGetAllPosts()
 
 const selectedCategories = defineModel<Category[]>('selected-categories', {
   default: [],

@@ -1,0 +1,5 @@
+@reference '@/shared/ui/styles/tailwind/index.css';
+
+.category-tag {
+  @apply bg-primary-light text-primary min-h-fit rounded-[20px] px-[14px] py-[6px] text-sm leading-[1];
+}

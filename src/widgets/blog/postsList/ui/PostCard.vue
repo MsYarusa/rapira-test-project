@@ -1,5 +1,5 @@
 <template>
-  <div class="z-40 flex flex-col gap-[10px]">
+  <div class="flex flex-col gap-[10px]">
     <img
       class="aspect-13/8 w-full rounded-xl object-cover object-center"
       :src="post.imageUrl"

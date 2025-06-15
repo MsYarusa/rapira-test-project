@@ -1,7 +1,5 @@
 <template>
-  <div
-    class="bg-primary-light text-primary min-h-fit rounded-[20px] px-[14px] py-[6px] text-sm leading-[1]"
-  >
+  <div class="category-tag">
     <span>{{ capitalizeString(category.title) }}</span>
   </div>
 </template>
@@ -17,3 +15,7 @@ interface CategoryTagProps {
 
 defineProps<CategoryTagProps>()
 </script>
+
+<style lang="css">
+@import './CategoryTag.css';
+</style>

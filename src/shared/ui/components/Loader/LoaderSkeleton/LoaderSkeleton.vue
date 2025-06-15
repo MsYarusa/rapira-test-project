@@ -4,6 +4,6 @@
   </div>
 </template>
 
-<style lang="scss">
-@import './LoaderSkeleton.scss';
+<style lang="css">
+@import './LoaderSkeleton.css';
 </style>

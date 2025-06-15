@@ -1,0 +1,45 @@
+@reference '@/shared/ui/styles/tailwind/index.css';
+
+:root {
+  --loader-bg-color: var(--color-gray-300);
+  --loader-highlight-color: var(--color-gray-100);
+  --loader-animation-duration: 4s;
+  --loader-gradient-width: 200%;
+  --loader-animation-offset: 200%;
+}
+
+@keyframes loader {
+  0% {
+    background-position: var(--loader-animation-offset) 0;
+  }
+  100% {
+    background-position: calc(var(--loader-animation-offset) * -1) 0;
+  }
+}
+
+.loading-skeleton__container {
+  position: relative;
+  overflow: hidden;
+  background: var(--loader-bg-color) 50%;
+}
+
+.loading-skeleton__container .loading-skeleton {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    var(--loader-highlight-color) 50%,
+    transparent 100%
+  );
+  background-size: var(--loader-gradient-width) 100%;
+  animation: loader var(--loader-animation-duration) infinite linear;
+}
+
+.skeleton-primary {
+  --loader-bg-color: var(--color-primary-alpha-25);
+  --loader-highlight-color: var(--color-primary-light);
+}

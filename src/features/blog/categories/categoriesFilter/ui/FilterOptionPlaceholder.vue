@@ -1,6 +1,6 @@
 <template>
   <button class="filter-option">
-    <LoaderSkeleton class="category-loader-skeleton h-5 w-12 rounded-sm" />
+    <LoaderSkeleton class="skeleton-primary h-5 w-12 rounded-sm" />
 
     <PlusIcon class="fill-primary" />
   </button>
@@ -13,9 +13,4 @@ import { LoaderSkeleton } from '@/shared/ui/components'
 
 <style lang="css" scoped>
 @import './FilterOption.css';
-
-.category-loader-skeleton {
-  --loader-bg-color: var(--color-primary-alpha-50);
-  --loader-highlight-color: var(--color-primary-light);
-}
 </style>
