@@ -9,6 +9,7 @@ import PlusIcon from './base/plus.svg'
 import BurgerMenuActiveIcon from './burger-menu-active.svg'
 import BurgerMenuInactiveIcon from './burger-menu-inactive.svg'
 import LogoIcon from './logo.svg'
+import SearchPlug from './search-failed.svg'
 
 export {
   LogoIcon,
@@ -22,4 +23,5 @@ export {
   PlusIcon,
   ClockIcon,
   CommentsIcon,
+  SearchPlug,
 }

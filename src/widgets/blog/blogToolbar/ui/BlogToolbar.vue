@@ -15,8 +15,8 @@
 
         <FilterVisibilityButtons
           v-model:active="filterIsActive"
-          :filter-is-empty="filteredCategories.length === 0"
-          @clear="clearFilteredCategories"
+          :filter-is-empty="selectedCategories.length === 0"
+          @clear="clearSelectedCategories"
         />
       </div>
 
@@ -28,7 +28,7 @@
 
     <CategoriesFilter
       v-if="filterIsActive"
-      v-model="filteredCategories"
+      v-model="selectedCategories"
       :categories="categoriesStore.categories"
       :is-loading="isLoading"
     />
@@ -51,14 +51,14 @@ import { messagesObject } from '../locale'
 
 const filterIsActive = ref<boolean>(false)
 
-const filteredCategories = defineModel<Category[]>('post-categories', {
+const selectedCategories = defineModel<Category[]>('post-categories', {
   default: [],
 })
 
 const searchValue = defineModel<string>('post-title')
 
-const clearFilteredCategories = (): void => {
-  filteredCategories.value = []
+const clearSelectedCategories = (): void => {
+  selectedCategories.value = []
 }
 
 const { getAllCategories, isLoading } = useGetAllCategories()

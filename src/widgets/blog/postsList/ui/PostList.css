@@ -1,0 +1,5 @@
+@reference '@/shared/ui/styles/tailwind/index.css';
+
+.post-list__container {
+  @apply rounded-xl bg-white p-[15px] xl:p-[30px];
+}
