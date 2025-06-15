@@ -35,6 +35,7 @@ export default defineConfigWithVueTs(
     '**/dist-ssr/**',
     '**/coverage/**',
     '**/openapi/client/**',
+    'eslint.config.js',
   ]),
 
   ...eslintPluginVue.configs['flat/recommended'],
@@ -62,6 +63,11 @@ export default defineConfigWithVueTs(
         },
         project: './tsconfig.app.json',
         extraFileExtensions: ['vue'],
+      },
+      globals: {
+        console: 'readonly',
+        setTimeout: 'readonly',
+        process: 'readonly',
       },
     },
 
