@@ -1,10 +1,12 @@
 <template>
   <div
     class="search-input has-focus:ring-primary/32 has-focus:border-primary! hover:border-primary! rounded-md has-focus:ring-2"
+    @click="inputFocused = true"
   >
     <SearchIcon class="size-[14px] fill-gray-400" />
 
     <input
+      ref="input"
       v-model="innerValue"
       type="text"
       :placeholder="t('common.search_placeholder')"
@@ -21,8 +23,8 @@
 </template>
 
 <script setup lang="ts">
-import { useDebounceFn } from '@vueuse/core'
-import { ref, watch } from 'vue'
+import { useDebounceFn, useFocus } from '@vueuse/core'
+import { ref, useTemplateRef, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 
 import { SearchIcon, XIcon } from '../../assets/icons'
@@ -62,6 +64,10 @@ const updateInnerValue = (): void => {
 }
 
 watch(modelValue, updateInnerValue, { immediate: true })
+
+const input = useTemplateRef('input')
+
+const { focused: inputFocused } = useFocus(input)
 </script>
 
 <style scoped lang="scss">
