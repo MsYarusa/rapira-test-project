@@ -1,9 +1,7 @@
 <template>
-  <div
-    class="z-40 flex w-[325px] flex-col gap-[10px] sm:w-[365px] xl:w-[400px]"
-  >
+  <div class="z-40 flex flex-col gap-[10px]">
     <img
-      class="h-[200px] w-full rounded-xl object-cover object-center sm:h-[220px] xl:h-[250px]"
+      class="aspect-13/8 w-full rounded-xl object-cover object-center"
       :src="post.imageUrl"
       :alt="`image-${post.title}'`"
     />
