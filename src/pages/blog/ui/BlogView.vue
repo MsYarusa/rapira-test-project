@@ -3,11 +3,15 @@
     v-model:post-categories="filteredPostCategories"
     v-model:post-title="searchPostTitle"
   />
-  <PostList />
+  <PageContainer>
+    <PostList />
+  </PageContainer>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue'
+
+import { PageContainer } from '@/shared/ui/components'
 
 import type { Category } from '@/entities/blog/categories'
 

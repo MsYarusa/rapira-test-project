@@ -1,6 +1,8 @@
 import ArrowDownIcon from './base/arrow-down.svg'
 import ArrowUpIcon from './base/arrow-up.svg'
 import CheckIcon from './base/check.svg'
+import ClockIcon from './base/clock.svg'
+import CommentsIcon from './base/comments.svg'
 import XIcon from './base/cross.svg'
 import SearchIcon from './base/magnifier.svg'
 import PlusIcon from './base/plus.svg'
@@ -18,4 +20,6 @@ export {
   ArrowUpIcon,
   CheckIcon,
   PlusIcon,
+  ClockIcon,
+  CommentsIcon,
 }

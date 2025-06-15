@@ -8,7 +8,15 @@ export function formatDateToLocal(date: Date): string {
 
   const { locale } = useI18n()
 
-  const formattedDate = date.toLocaleDateString(locale.value, options)
+  let formattedDate = date.toLocaleDateString(locale.value, options)
+
+  const parts = formattedDate.split(' ')
+
+  const month = parts[1]
+
+  parts[1] = month.charAt(0).toUpperCase() + month.slice(1, -1)
+
+  formattedDate = parts.join(' ')
 
   return formattedDate
 }

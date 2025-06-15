@@ -1,25 +1,34 @@
 <template>
-  <div class="post-meta">
-    <span>{{ formatDateToLocal(post.date) }}</span>
+  <div class="post-meta flex gap-[10px] text-sm leading-[1] text-gray-500">
+    <span class="post-meta-field">{{ formatDateToLocal(post.date) }}</span>
 
-    <span class="align-middle">.</span>
+    <span class="dot-divider">.</span>
 
-    <span>{{ `${post.readTime} ${t('min')}` }}</span>
+    <span class="post-meta-field">
+      <ClockIcon class="post-meta-icon" />
 
-    <span class="align-middle">.</span>
+      {{ `${post.readTime} ${t('min')}` }}
+    </span>
 
-    <span>{{
-      t(
-        'comments',
-        { count: post.commentsCount },
-        { plural: post.commentsCount },
-      )
-    }}</span>
+    <span class="dot-divider">.</span>
+
+    <span class="post-meta-field">
+      <CommentsIcon class="post-meta-icon" />
+
+      {{
+        t(
+          'comments',
+          { count: post.commentsCount },
+          { plural: post.commentsCount },
+        )
+      }}
+    </span>
   </div>
 </template>
 
 <script setup lang="ts">
 import { useI18nModule } from '@/shared/lib/i18n'
+import { ClockIcon, CommentsIcon } from '@/shared/ui/assets/icons'
 
 import { formatDateToLocal } from '../lib/date/formatDateToLocal'
 import { messagesObject } from '../locale'
@@ -34,4 +43,6 @@ defineProps<PostMetaProps>()
 const { t } = useI18nModule({ messagesObject })
 </script>
 
-<style scoped></style>
+<style scoped>
+@import './PostMeta.css';
+</style>

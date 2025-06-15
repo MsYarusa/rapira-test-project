@@ -1,0 +1,13 @@
+@reference '@/shared/ui/styles/tailwind/index.css';
+
+.post-meta-icon {
+  @apply size-[20px] fill-gray-500;
+}
+
+.dot-divider {
+  @apply text-[20px] leading-[10px];
+}
+
+.post-meta-field {
+  @apply flex items-center gap-1;
+}

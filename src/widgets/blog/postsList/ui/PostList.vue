@@ -1,5 +1,7 @@
 <template>
-  <div>
+  <div
+    class="flex flex-wrap justify-center gap-x-[20px] gap-y-[20px] rounded-xl bg-white p-[15px] sm:gap-y-[25px] lg:gap-y-[40px] xl:p-[30px]"
+  >
     <PostCard
       v-for="post of postsStore.posts"
       :key="post.id"
@@ -22,5 +24,3 @@ const { getAllPosts } = useGetAllPosts()
 
 onMounted(getAllPosts)
 </script>
-
-<style scoped></style>
