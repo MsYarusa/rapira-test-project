@@ -5,7 +5,7 @@
 <script lang="ts" setup>
 import { useI18nModule } from '@/shared/lib/i18n'
 
-const { t } = useI18nModule({
-  messagesObject: { ru: { home_page_title: 'Главная' } },
-})
+import { messagesObject } from '../locale'
+
+const { t } = useI18nModule({ messagesObject })
 </script>

@@ -47,6 +47,7 @@ import { CategoriesFilter } from '@/features/blog/categories/categoriesFilter'
 import { useGetAllCategories } from '@/features/blog/categories/getAllCategories'
 
 import FilterVisibilityButtons from './FilterVisibilityButtons.vue'
+import { messagesObject } from '../locale'
 
 const filterIsActive = ref<boolean>(false)
 
@@ -72,7 +73,5 @@ watch(filterIsActive, () => {
   getAllCategories()
 })
 
-const { t } = useI18nModule({
-  messagesObject: { ru: { blog_page_title: 'Блог' } },
-})
+const { t } = useI18nModule({ messagesObject })
 </script>
