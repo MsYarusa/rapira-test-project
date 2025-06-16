@@ -77,8 +77,6 @@ app.get('/users/avatar/:id', (req, res, next) => {
   )
 
   handleImageResponse(imagePath, res)
-
-  next()
 })
 
 // Проксирует получение изображение для постов
