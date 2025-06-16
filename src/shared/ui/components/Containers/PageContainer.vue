@@ -1,5 +1,5 @@
 <template>
-  <div class="my-[10px] px-[10px] lg:my-[20px] lg:px-[30px]">
+  <div class="mx-[10px] my-[10px] lg:mx-[30px] lg:my-[20px]">
     <slot />
   </div>
 </template>
