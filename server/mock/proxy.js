@@ -40,7 +40,7 @@ function handleImageResponse(imagePath, res) {
         .send({ error_message: 'Изображение не найдено', error_code: 404 })
     }
 
-    const mimeType = 'image/jpeg'
+    let mimeType = 'image/jpeg'
 
     if (imagePath.endsWith('.png')) {
       mimeType = 'image/png'
