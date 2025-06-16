@@ -2,6 +2,7 @@
 import PageContainer from './Containers/PageContainer.vue'
 // Form controls
 import BaseSearchInput from './FormControls/BaseSearchInput.vue'
+import BaseTextarea from './FormControls/BaseTextarea.vue'
 // Loaders
 import LoaderSkeleton from './Loader/LoaderSkeleton/LoaderSkeleton.vue'
 // Modals
@@ -14,4 +15,5 @@ export {
   LoaderSkeleton,
   PageContainer,
   BaseModal,
+  BaseTextarea,
 }
