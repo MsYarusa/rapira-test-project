@@ -28,7 +28,7 @@
 </template>
 
 <script setup lang="ts">
-import { watch } from 'vue'
+import { onUnmounted, watch } from 'vue'
 
 import ModalBackground from './ModalBackground.vue'
 import { XIcon } from '../../assets/icons'
@@ -58,8 +58,6 @@ const handleBackgroundClick = (): void => {
 
 const handleBodyOverflow = (): void => {
   if (visible.value) {
-    document.body.classList.add('overflow-hidden')
-
     return
   }
 
@@ -79,4 +77,8 @@ const handleEmits = (): void => {
 }
 
 watch(visible, handleEmits)
+
+onUnmounted(() => {
+  document.body.classList.remove('overflow-hidden')
+})
 </script>

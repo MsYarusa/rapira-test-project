@@ -1,6 +1,6 @@
 <template>
   <header
-    class="flex h-[78px] items-center bg-black px-[22px] py-[14px] lg:h-auto lg:px-[30px] lg:py-[15px]"
+    class="sticky top-0 z-20 flex h-[78px] items-center bg-black px-[22px] py-[14px] lg:h-auto lg:px-[30px] lg:py-[15px]"
   >
     <div class="z-20 flex h-fit w-7xl gap-20">
       <div class="flex gap-4">
