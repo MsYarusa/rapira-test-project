@@ -2,6 +2,7 @@
   <AddCommentForm
     v-if="active"
     :max-length="maxLength"
+    :post="post"
     @cancel="active = false"
   />
 
@@ -19,11 +20,14 @@ import { ref } from 'vue'
 
 import { useI18nModule } from '@/shared/lib/i18n'
 
+import type { Post } from '@/entities/blog/posts'
+
 import AddCommentForm from './AddCommentForm.vue'
 import { messagesObject } from '../locale'
 
 interface AddCommentProps {
   maxLength?: number
+  post: Post
 }
 
 defineProps<AddCommentProps>()

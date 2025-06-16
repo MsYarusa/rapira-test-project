@@ -133,6 +133,7 @@ export default defineConfigWithVueTs(
           scss: 'always',
           css: 'always',
           json: 'always',
+          gen: 'always',
         },
       ],
 

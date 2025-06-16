@@ -6,7 +6,7 @@
       <span class="text-gray-500">{{ post.commentsCount }}</span>
     </h3>
 
-    <AddComment />
+    <AddComment :post="post" />
 
     <UserComment
       v-for="comment of commentsStore.commentsRecord[post.id]"

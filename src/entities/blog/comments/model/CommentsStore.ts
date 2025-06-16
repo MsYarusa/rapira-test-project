@@ -13,7 +13,7 @@ export const useCommentsStore = defineStore(STORE_NAME, () => {
   }
 
   const addComment = (newComment: Comment, postId: number): void => {
-    commentsRecord.value[postId].push(newComment)
+    commentsRecord.value[postId].unshift(newComment)
   }
 
   return {

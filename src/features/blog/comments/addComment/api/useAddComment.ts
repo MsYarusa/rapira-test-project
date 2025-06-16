@@ -18,7 +18,7 @@ interface UseAddCommentReturn
 }
 
 interface AddCommentParams {
-  post_id: number
+  postId: number
   content: string
   user: User
 }
@@ -36,7 +36,7 @@ export function useAddComment(): UseAddCommentReturn {
 
     await sendRequest({
       body: {
-        post_id: params.post_id,
+        post_id: params.postId,
         user_id: params.user.id,
         content: params.content,
       },
@@ -63,8 +63,8 @@ export function useAddComment(): UseAddCommentReturn {
       id: response.value.id,
     }
 
-    commentsStore.addComment(comment, requestParamsCache.post_id)
-    postsStore.incrementPostCommentCount(requestParamsCache.post_id)
+    commentsStore.addComment(comment, requestParamsCache.postId)
+    postsStore.incrementPostCommentCount(requestParamsCache.postId)
   }
 
   watch(response, saveComment)

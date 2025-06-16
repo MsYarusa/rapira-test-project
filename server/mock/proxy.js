@@ -1,5 +1,6 @@
 import express from 'express'
 import fs from 'fs'
+import cors from 'cors'
 import { createProxyMiddleware } from 'http-proxy-middleware'
 import path from 'path'
 import 'dotenv/config'
@@ -15,6 +16,7 @@ const PROXY_PORT = process.env.API_MOCK_PROXY_PORT || 3000
 */
 
 const app = express()
+app.use(cors())
 
 // Проксирует получение комментариев для поста
 app.get('/blog/comments', (req, res, next) => {
@@ -28,8 +30,6 @@ app.get('/blog/comments', (req, res, next) => {
 let currentCommentId = 100
 
 app.post('/blog/comments', (req, res, next) => {
-  req.headers['prefer'] = `example=getAllCommentsByPost_${post_id}`
-
   currentCommentId += 1
 
   return res.status(201).send({ id: currentCommentId })
