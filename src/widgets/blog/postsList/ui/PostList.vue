@@ -1,7 +1,7 @@
 <template>
   <div
     v-if="filteredPosts.length || isLoading"
-    class="post-list__container grid grid-cols-1 justify-center gap-x-[20px] gap-y-[20px] sm:grid-cols-2 sm:gap-y-[25px] lg:grid-cols-3 lg:gap-y-[40px]"
+    class="post-list__container"
   >
     <PostCard
       v-for="post of filteredPosts"
@@ -19,9 +19,9 @@
 
   <div
     v-else
-    class="post-list__container flex items-center justify-center"
+    class="flex items-center justify-center rounded-xl bg-white px-[65px] py-[30px]"
   >
-    <SearchPlug />
+    <SearchPlug class="m-5" />
   </div>
 </template>
 

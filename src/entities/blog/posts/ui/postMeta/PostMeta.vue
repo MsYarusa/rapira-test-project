@@ -30,9 +30,9 @@
 import { useI18nModule } from '@/shared/lib/i18n'
 import { ClockIcon, CommentsIcon } from '@/shared/ui/assets/icons'
 
-import { formatDateToLocal } from '../lib/date/formatDateToLocal'
-import { messagesObject } from '../locale'
-import type { Post } from '../model/Post'
+import { formatDateToLocal } from '../../lib/date/formatDateToLocal'
+import { messagesObject } from '../../locale'
+import type { Post } from '../../model/Post'
 
 interface PostMetaProps {
   post: Post
