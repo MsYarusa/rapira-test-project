@@ -69,7 +69,7 @@ export default defineConfigWithVueTs(
         console: 'readonly',
         setTimeout: 'readonly',
         process: 'readonly',
-        __dirname: 'readonly',
+        document: 'readonly',
       },
     },
 
