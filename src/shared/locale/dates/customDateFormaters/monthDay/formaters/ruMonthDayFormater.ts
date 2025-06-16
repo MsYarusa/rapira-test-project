@@ -1,14 +1,10 @@
-import { useI18n } from 'vue-i18n'
-
-export function formatDateToLocal(date: Date): string {
+export function ruMonthDayFormater(date: Date): string {
   const options: Intl.DateTimeFormatOptions = {
     day: 'numeric',
     month: 'short',
   }
 
-  const { locale } = useI18n()
-
-  let formattedDate = date.toLocaleDateString(locale.value, options)
+  let formattedDate = date.toLocaleDateString('ru-RU', options)
 
   const parts = formattedDate.split(' ')
 

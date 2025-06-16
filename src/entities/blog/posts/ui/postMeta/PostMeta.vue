@@ -1,6 +1,8 @@
 <template>
   <div class="post-meta flex gap-[10px] text-sm leading-[1] text-gray-500">
-    <span class="post-meta-field">{{ formatDateToLocal(post.date) }}</span>
+    <span class="post-meta-field">
+      {{ dateFormater(post.date) }}
+    </span>
 
     <span class="dot-divider">.</span>
 
@@ -28,9 +30,9 @@
 
 <script setup lang="ts">
 import { useI18nModule } from '@/shared/lib/i18n'
+import { useMonthDayDateFormater } from '@/shared/locale/dates/customDateFormaters'
 import { ClockIcon, CommentsIcon } from '@/shared/ui/assets/icons'
 
-import { formatDateToLocal } from '../../lib/date/formatDateToLocal'
 import { messagesObject } from '../../locale'
 import type { Post } from '../../model/Post'
 
@@ -39,6 +41,8 @@ interface PostMetaProps {
 }
 
 defineProps<PostMetaProps>()
+
+const { formater: dateFormater } = useMonthDayDateFormater()
 
 const { t } = useI18nModule({ messagesObject })
 </script>

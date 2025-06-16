@@ -1,3 +1,3 @@
-import ru from './ru.json'
+import ru from './ru-RU.json'
 
-export const messagesObject = { ru }
+export const messagesObject = { 'ru-RU': ru }
