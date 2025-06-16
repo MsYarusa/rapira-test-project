@@ -9,7 +9,7 @@
 
   padding: 6px 14px;
 
-  @apply bg-primary-light text-primary hover:text-primary-active rounded-[20px] text-sm leading-[1] sm:text-base;
+  @apply bg-primary-light text-primary hover:text-primary-active rounded-[20px] text-sm sm:text-base;
 }
 
 .filter-option svg {

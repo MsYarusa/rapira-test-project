@@ -9,6 +9,10 @@
     "filter_active_btn": "Скрыть фильтр"
   },
 
+  "dates": {
+    "at": "в"
+  },
+
   "navigation": {
     "home_page_label": "главная",
     "blog_page_label": "блог"

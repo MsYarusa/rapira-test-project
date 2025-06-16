@@ -1,6 +1,6 @@
 <template>
   <button class="filter-option">
-    <LoaderSkeleton class="skeleton-primary h-5 w-12 rounded-sm" />
+    <LoaderSkeleton class="skeleton-primary skeleton-text h-5 w-12" />
 
     <PlusIcon class="fill-primary" />
   </button>

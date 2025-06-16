@@ -6,6 +6,7 @@ import CommentsIcon from './base/comments.svg'
 import XIcon from './base/cross.svg'
 import SearchIcon from './base/magnifier.svg'
 import PlusIcon from './base/plus.svg'
+import UserIcon from './base/user.svg'
 import BurgerMenuActiveIcon from './burger-menu-active.svg'
 import BurgerMenuInactiveIcon from './burger-menu-inactive.svg'
 import LogoIcon from './logo.svg'
@@ -24,4 +25,5 @@ export {
   ClockIcon,
   CommentsIcon,
   SearchPlug,
+  UserIcon,
 }

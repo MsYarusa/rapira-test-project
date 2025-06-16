@@ -35,9 +35,13 @@ export function useGetCommentsByPostId(): useGetCommentsByPostIdReturn {
       GetAllCommentsByPostData
     >({ requestMethod })
 
+  let postId: number | null = null
+
   const getCommentsByPostId = async (
     params: getCommentsByPostIdParams,
   ): Promise<void> => {
+    postId = params.post_id
+
     await sendRequest({
       query: {
         post_id: params.post_id,
@@ -65,7 +69,11 @@ export function useGetCommentsByPostId(): useGetCommentsByPostIdReturn {
       },
     )
 
-    commentsStore.setComments(commentsMappedDefined)
+    if (!postId) {
+      return
+    }
+
+    commentsStore.setComments(commentsMappedDefined, postId)
   }
 
   watch(response, saveComments)

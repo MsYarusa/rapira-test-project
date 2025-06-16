@@ -10,7 +10,7 @@
 
     <PostMeta :post="post" />
 
-    <h2 class="text-[22px] leading-[1] font-semibold">
+    <h2 class="text-[22px] leading-[125%] font-semibold">
       {{ post.title }}
     </h2>
 
@@ -49,5 +49,5 @@ const modalVisible = ref<boolean>(false)
 </script>
 
 <style class="css">
-@import './PostList.css';
+@import '../PostList.css';
 </style>

@@ -35,8 +35,8 @@ import { usePostsStore, type Post } from '@/entities/blog/posts'
 
 import { useGetAllPosts } from '@/features/blog/posts/getAllPosts'
 
-import PostCard from './PostCard.vue'
-import PostCardPlaceholder from './PostCardPlaceholder.vue'
+import PostCard from './post/PostCard.vue'
+import PostCardPlaceholder from './post/PostCardPlaceholder.vue'
 
 const POSTS_PLACEHOLDER_COUNT = 4
 

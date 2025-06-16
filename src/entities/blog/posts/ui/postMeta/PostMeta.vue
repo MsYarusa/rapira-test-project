@@ -1,5 +1,5 @@
 <template>
-  <div class="post-meta flex gap-[10px] text-sm leading-[1] text-gray-500">
+  <div class="post-meta flex gap-[10px] text-sm text-gray-500">
     <span class="post-meta-field">
       {{ dateFormater(post.date) }}
     </span>
