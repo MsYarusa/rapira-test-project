@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <RouterLink to="/">
     <LogoIcon />
-  </div>
+  </RouterLink>
 </template>
 
 <script setup lang="ts">
