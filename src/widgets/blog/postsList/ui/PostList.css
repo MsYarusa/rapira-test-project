@@ -1,9 +1,9 @@
 @reference '@/shared/ui/styles/tailwind/index.css';
 
 .post-list__container {
-  @apply grid grid-cols-1 justify-center gap-x-[20px] gap-y-[20px] rounded-xl bg-white p-[15px];
-  @apply sm:grid-cols-2 sm:gap-y-[25px];
-  @apply lg:grid-cols-3 lg:gap-y-[40px] xl:p-[30px];
+  @apply rounded-xl bg-white;
+  @apply grid grid-cols-1 justify-center sm:gap-y-[25px] md:grid-cols-2 lg:grid-cols-3;
+  @apply gap-x-[20px] gap-y-[20px] p-[15px] lg:gap-y-[40px] xl:p-[30px];
 }
 
 .post-categories__container {
