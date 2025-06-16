@@ -4,9 +4,9 @@
     class="modal__container fixed top-0 left-0 flex h-screen w-screen items-center justify-center"
   >
     <div
-      class="modal z-20 m-[15px] max-h-[0.8] w-fit rounded-xl bg-white p-[15px]"
+      class="modal z-20 m-[15px] flex max-h-[80vh] w-fit flex-col gap-[15px] rounded-xl bg-white p-[15px]"
     >
-      <div class="modal-header relative mb-[15px] pe-[20px]">
+      <div class="modal-header relative pe-[20px]">
         <slot name="modal-header" />
 
         <button
@@ -19,7 +19,7 @@
         </button>
       </div>
 
-      <div class="hide-scrollbar overflow-y-auto">
+      <div class="hide-scrollbar overflow-y-scroll">
         <slot name="modal-content" />
       </div>
     </div>
@@ -58,6 +58,8 @@ const handleBackgroundClick = (): void => {
 
 const handleBodyOverflow = (): void => {
   if (visible.value) {
+    document.body.classList.add('overflow-hidden')
+
     return
   }
 
