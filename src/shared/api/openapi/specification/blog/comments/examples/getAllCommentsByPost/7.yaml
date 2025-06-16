@@ -46,49 +46,45 @@ getAllCommentsByPost_7:
         first_name: Мира
         last_name: Гусева
         links:
-          avatar: http://localhost:3000/blog/posts/image/1
+          avatar: http://localhost:3000/users/avatar/1
       - id: 2
         first_name: Аркадий
         last_name: Филонов
         links:
-          avatar: http://localhost:3000/blog/posts/image/2
+          avatar: http://localhost:3000/users/avatar/2
       - id: 3
         first_name: Катя
         last_name: Иванова
         links:
-          avatar: http://localhost:3000/blog/posts/image/3
+          avatar: http://localhost:3000/users/avatar/3
       - id: 4
         first_name: Кевин
         last_name: Клейн
-        links:
-          avatar: http://localhost:3000/blog/posts/image/4
       - id: 5
         first_name: Марк
         last_name: Пак
         links:
-          avatar: http://localhost:3000/blog/posts/image/5
+          avatar: http://localhost:3000/users/avatar/5
       - id: 6
         first_name: Патриция
         last_name: Фриман
         links:
-          avatar: http://localhost:3000/blog/posts/image/6
+          avatar: http://localhost:3000/users/avatar/6
       - id: 7
         first_name: Павел
         last_name: Задорожный
-        links:
-          avatar: http://localhost:3000/blog/posts/image/7
       - id: 8
         first_name: Соня
         last_name: Полушкина
         links:
-          avatar: http://localhost:3000/blog/posts/image/8
+          avatar: http://localhost:3000/users/avatar/8
       - id: 9
         first_name: Анастасия
         last_name: Петровенко
         links:
-          avatar: http://localhost:3000/blog/posts/image/9
+          avatar: http://localhost:3000/users/avatar/9
       - id: 10
         first_name: Маргарита
         last_name: Сторожевская
         links:
-          avatar: http://localhost:3000/blog/posts/image/10
+          avatar: http://localhost:3000/users/avatar/10

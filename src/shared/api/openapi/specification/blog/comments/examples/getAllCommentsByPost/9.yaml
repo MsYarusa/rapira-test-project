@@ -14,9 +14,9 @@ getAllCommentsByPost_9:
         first_name: Марк
         last_name: Пак
         links:
-          avatar: http://localhost:3000/blog/posts/image/5
+          avatar: http://localhost:3000/users/avatar/5
       - id: 10
         first_name: Маргарита
         last_name: Сторожевская
         links:
-          avatar: http://localhost:3000/blog/posts/image/10
+          avatar: http://localhost:3000/users/avatar/10

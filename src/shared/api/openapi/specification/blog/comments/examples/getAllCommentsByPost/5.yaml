@@ -13,10 +13,6 @@ getAllCommentsByPost_5:
       - id: 4
         first_name: Кевин
         last_name: Клейн
-        links:
-          avatar: http://localhost:3000/blog/posts/image/4
       - id: 7
         first_name: Павел
         last_name: Задорожный
-        links:
-          avatar: http://localhost:3000/blog/posts/image/7

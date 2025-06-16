@@ -17,8 +17,6 @@ getAllUsers:
   - id: 4
     first_name: Кевин
     last_name: Клейн
-    links:
-      avatar: http://localhost:3000/users/avatar/4
   - id: 5
     first_name: Марк
     last_name: Пак
@@ -32,8 +30,6 @@ getAllUsers:
   - id: 7
     first_name: Павел
     last_name: Задорожный
-    links:
-      avatar: http://localhost:3000/users/avatar/7
   - id: 8
     first_name: Соня
     last_name: Полушкина

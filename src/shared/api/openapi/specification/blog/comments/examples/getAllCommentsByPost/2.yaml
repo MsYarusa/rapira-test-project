@@ -26,19 +26,19 @@ getAllCommentsByPost_2:
         first_name: Аркадий
         last_name: Филонов
         links:
-          avatar: http://localhost:3000/blog/posts/image/2
+          avatar: http://localhost:3000/users/avatar/2
       - id: 3
         first_name: Катя
         last_name: Иванова
         links:
-          avatar: http://localhost:3000/blog/posts/image/3
+          avatar: http://localhost:3000/users/avatar/3
       - id: 5
         first_name: Марк
         last_name: Пак
         links:
-          avatar: http://localhost:3000/blog/posts/image/5
+          avatar: http://localhost:3000/users/avatar/5
       - id: 6
         first_name: Патриция
         last_name: Фриман
         links:
-          avatar: http://localhost:3000/blog/posts/image/6
+          avatar: http://localhost:3000/users/avatar/6

@@ -10,4 +10,4 @@ getAllCommentsByPost_1:
         first_name: Мира
         last_name: Гусева
         links:
-          avatar: http://localhost:3000/blog/posts/image/1
+          avatar: http://localhost:3000/users/avatar/1
