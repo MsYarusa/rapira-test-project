@@ -1,6 +1,6 @@
 <template>
   <div
-    class="search-input has-focus:ring-primary/32 has-focus:border-primary! hover:border-primary! rounded-md has-focus:ring-2"
+    class="form-control flex items-center px-[10px]"
     @click="inputFocused = true"
   >
     <SearchIcon class="size-[14px] fill-gray-400" />
@@ -10,15 +10,13 @@
       v-model="innerValue"
       type="text"
       :placeholder="t('common.search_placeholder')"
-      class="w-full text-[13px] leading-[14px] placeholder-gray-400/50 outline-none"
+      class="form-control-input text-[13px] leading-[14px]"
     />
 
-    <button
-      class="cursor-pointer p-2 pe-0 outline-0"
-      @click="clearInnerValue"
-    >
-      <XIcon class="size-[14px] fill-gray-400" />
-    </button>
+    <ClearButton
+      class="p-2 [&>svg]:size-[14px]"
+      @click="innerValue = ''"
+    />
   </div>
 </template>
 
@@ -27,7 +25,8 @@ import { useDebounceFn, useFocus } from '@vueuse/core'
 import { ref, useTemplateRef, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 
-import { SearchIcon, XIcon } from '../../assets/icons'
+import ClearButton from './utils/ClearButton.vue'
+import { SearchIcon } from '../../assets/icons'
 
 const DEFAULT_DEBOUNCE = 500
 
@@ -42,10 +41,6 @@ const { t } = useI18n()
 const innerValue = ref<string>('')
 
 const modelValue = defineModel<string>()
-
-const clearInnerValue = (): void => {
-  innerValue.value = ''
-}
 
 const updateModelValue = (): void => {
   modelValue.value = innerValue.value
@@ -70,22 +65,6 @@ const input = useTemplateRef('input')
 const { focused: inputFocused } = useFocus(input)
 </script>
 
-<style scoped lang="scss">
-.search-input {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-
-  width: 100%;
-  max-width: 400px;
-  min-width: fit-content;
-
-  height: 40px;
-
-  padding-left: 10px;
-  padding-right: 10px;
-
-  background-color: var(--color-gray-100);
-  border: 1px solid transparent;
-}
+<style scoped>
+@import './FormControls.css';
 </style>

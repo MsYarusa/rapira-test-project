@@ -1,0 +1,22 @@
+@reference '@/shared/ui/styles/tailwind/index.css';
+
+.form-control {
+  gap: 10px;
+
+  width: 100%;
+
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+
+  @apply hover:border-primary! rounded-md;
+  @apply has-focus:ring-primary/32 has-focus:border-primary! has-focus:ring-2;
+}
+
+.form-control-input {
+  @apply w-full placeholder-gray-400/50 outline-none;
+}
+
+.form-control--invalid {
+  @apply hover:border-invalid!;
+  @apply has-focus:ring-invalid/32 has-focus:border-invalid!;
+}

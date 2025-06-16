@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-white px-[10px] sm:px-[30px] lg:px-[95px]">
+  <div class="blog-toolbar bg-white px-[10px] sm:px-[30px] lg:px-[95px]">
     <div class="flex flex-col gap-[10px] py-3 sm:py-5">
       <div class="flex justify-between gap-4">
         <div class="flex w-full items-center gap-[40px]">
@@ -9,7 +9,7 @@
 
           <BaseSearchInput
             v-model="searchValue"
-            class="max-sm:hidden!"
+            class="blog-toolbar-search max-sm:hidden!"
           />
         </div>
 
@@ -22,7 +22,7 @@
 
       <BaseSearchInput
         v-model="searchValue"
-        class="max-w-full! sm:hidden!"
+        class="blog-toolbar-search max-w-full! sm:hidden!"
       />
     </div>
 
@@ -75,3 +75,15 @@ watch(filterIsActive, () => {
 
 const { t } = useI18nModule({ messagesObject })
 </script>
+
+<style scoped>
+.blog-toolbar .blog-toolbar-search {
+  background-color: var(--color-gray-100);
+  border: 1px solid transparent;
+
+  max-width: 400px;
+  min-width: fit-content;
+
+  height: 40px;
+}
+</style>
