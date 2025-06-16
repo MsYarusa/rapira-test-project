@@ -40,6 +40,15 @@ const router = createRouter({
         },
       ],
     },
+    {
+      path: '/:pathMatch(.*)*',
+      name: 'NotFound',
+      component: (): ConcreteComponent => {
+        return import('@/pages/404').then((module) => {
+          return module.NotFound
+        })
+      },
+    },
   ],
 })
 
