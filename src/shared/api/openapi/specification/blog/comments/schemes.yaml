@@ -39,9 +39,6 @@ CommentResponseBodyList:
 CommentRequestBody:
   type: object
   properties:
-    date:
-      type: string
-      format: date-time
     content:
       type: string
     user_id:

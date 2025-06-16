@@ -1,5 +1,4 @@
 import type { Category } from '@/entities/blog/categories/@x/posts'
-import type { Comment } from '@/entities/blog/comments/@x/posts'
 
 export interface Post {
   id: number
@@ -9,6 +8,7 @@ export interface Post {
   date: Date
   readTime: number // В минутах
   imageUrl: string
-  commentsCount: number // Запрашиваем комментарии только при необходимости
+  // Запрашиваем комментарии только при необходимости. Храним только их количество
+  commentsCount: number
   categories: Category[]
 }

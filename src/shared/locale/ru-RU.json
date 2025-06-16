@@ -6,11 +6,15 @@
 
     "filter_btn": "Фильтр",
     "clear_filter_btn": "Очистить",
-    "filter_active_btn": "Скрыть фильтр"
+    "filter_active_btn": "Скрыть фильтр",
+
+    "publish": "Опубликовать",
+    "cancel": "Отмена"
   },
 
-  "dates": {
-    "at": "в"
+  "prepositions": {
+    "at": "в",
+    "from": "из"
   },
 
   "navigation": {

@@ -58,7 +58,6 @@ export type CommentResponseBodyList = {
 }
 
 export type CommentRequestBody = {
-  date: string
   content: string
   user_id: number
   post_id: number

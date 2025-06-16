@@ -47,6 +47,6 @@ const commentDate = computed(() => {
     minute: '2-digit',
   })
 
-  return `${date} ${t('dates.at')} ${time}`
+  return `${date} ${t('prepositions.at')} ${time}`
 })
 </script>

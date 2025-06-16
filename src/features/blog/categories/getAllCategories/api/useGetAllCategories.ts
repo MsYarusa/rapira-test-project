@@ -13,12 +13,12 @@ import {
   useCategoriesStore,
 } from '@/entities/blog/categories'
 
-interface useGetAllCategoriesReturn
+interface UseGetAllCategoriesReturn
   extends ApiServiceReturn<GetAllCategoriesResponse, GetAllCategoriesError> {
   getAllCategories: () => Promise<void>
 }
 
-export function useGetAllCategories(): useGetAllCategoriesReturn {
+export function useGetAllCategories(): UseGetAllCategoriesReturn {
   const { sendRequest, error, response, isLoading, status, clearError } =
     useFetch<
       GetAllCategoriesResponse,

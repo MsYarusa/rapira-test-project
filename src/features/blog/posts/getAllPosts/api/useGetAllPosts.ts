@@ -1,3 +1,13 @@
+import { watch } from 'vue'
+
+import { useFetch, type ApiServiceReturn } from '@/shared/api'
+import {
+  getAllPosts as requestMethod,
+  type GetAllPostsData,
+  type GetAllPostsError,
+  type GetAllPostsResponse,
+} from '@/shared/api/openapi/client'
+
 import {
   mapCategoryApiToCategory,
   type Category,
@@ -7,21 +17,13 @@ import {
   usePostsStore,
   type Post,
 } from '@/entities/blog/posts'
-import { useFetch, type ApiServiceReturn } from '@/shared/api'
-import {
-  getAllPosts as requestMethod,
-  type GetAllPostsData,
-  type GetAllPostsError,
-  type GetAllPostsResponse,
-} from '@/shared/api/openapi/client'
-import { watch } from 'vue'
 
-interface useGetAllCategoriesReturn
+interface UseGetAllCategoriesReturn
   extends ApiServiceReturn<GetAllPostsResponse, GetAllPostsError> {
   getAllPosts: () => Promise<void>
 }
 
-export function useGetAllPosts(): useGetAllCategoriesReturn {
+export function useGetAllPosts(): UseGetAllCategoriesReturn {
   const { sendRequest, error, response, isLoading, status, clearError } =
     useFetch<GetAllPostsResponse, GetAllPostsError, GetAllPostsData>({
       requestMethod,

@@ -15,19 +15,19 @@ import {
 } from '@/entities/blog/comments'
 import { mapUserApiToUser, type User } from '@/entities/users'
 
-interface useGetCommentsByPostIdReturn
+interface UseGetCommentsByPostIdReturn
   extends ApiServiceReturn<
     GetAllCommentsByPostResponse,
     GetAllCommentsByPostError
   > {
-  getCommentsByPostId: (params: getCommentsByPostIdParams) => Promise<void>
+  getCommentsByPostId: (params: GetCommentsByPostIdParams) => Promise<void>
 }
 
-interface getCommentsByPostIdParams {
+interface GetCommentsByPostIdParams {
   post_id: number
 }
 
-export function useGetCommentsByPostId(): useGetCommentsByPostIdReturn {
+export function useGetCommentsByPostId(): UseGetCommentsByPostIdReturn {
   const { sendRequest, error, response, isLoading, status, clearError } =
     useFetch<
       GetAllCommentsByPostResponse,
@@ -38,7 +38,7 @@ export function useGetCommentsByPostId(): useGetCommentsByPostIdReturn {
   let postId: number | null = null
 
   const getCommentsByPostId = async (
-    params: getCommentsByPostIdParams,
+    params: GetCommentsByPostIdParams,
   ): Promise<void> => {
     postId = params.post_id
 

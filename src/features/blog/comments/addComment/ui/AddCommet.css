@@ -1,0 +1,20 @@
+@reference '@/shared/ui/styles/tailwind/index.css';
+
+.add-comment-textarea {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+
+  @apply rounded-md text-sm leading-[22px];
+}
+
+.add-comment-form-btn {
+  @apply cursor-pointer rounded-md px-[16px] py-[12px];
+}
+
+.add-comment-form-btn.submit {
+  @apply bg-primary hover:bg-primary-active font-semibold text-white;
+}
+
+.add-comment-form-btn.reset {
+  @apply bg-primary-light text-primary hover:text-primary-active font-bold;
+}

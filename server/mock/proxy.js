@@ -25,6 +25,16 @@ app.get('/blog/comments', (req, res, next) => {
   next()
 })
 
+let currentCommentId = 100
+
+app.post('/blog/comments', (req, res, next) => {
+  req.headers['prefer'] = `example=getAllCommentsByPost_${post_id}`
+
+  currentCommentId += 1
+
+  return res.status(201).send({ id: currentCommentId })
+})
+
 // Получение изображений
 
 const FILENAME = fileURLToPath(import.meta.url)
